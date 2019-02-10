@@ -1,7 +1,7 @@
 
 /* Dependencies */
 var mongoose = require('mongoose'), 
-    Recipie = require('../models/recipies.server.model.js/index.js');
+    Recipie = require('../models/recipies.server.model.js');
  
 /* Create a recipie */
 exports.create = function(req, res) {
