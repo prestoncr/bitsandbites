@@ -1,0 +1,52 @@
+{
+    "entries": [
+        {
+            "name": "Apple Pie", 
+            "mealtype": "Dessert", 
+            "coreitem": "Other",
+            "ingredients": ["apples","pie crust","cinnamon"]
+        }, 
+        {
+            "name": "Cheeseburger", 
+            "mealtype": "Dinner", 
+            "coreitem": "Beef",
+            "ingredients": ["Ground beef","bun","cheese"]
+        }, 
+        {
+            "name": "Chicken Parmesean", 
+            "mealtype": "Dinner", 
+            "coreitem": "Chicken",
+            "ingredients": ["Chicken","redsauce","cheese"]
+        }, 
+        {
+            "name": "French Toast", 
+            "mealtype": "Breakfast", 
+            "coreitem": "Other",
+            "ingredients": ["Bread","Eggs","Cinnamon"]
+        }, 
+        {
+            "name": "Biscuits and Gravy", 
+            "mealtype": "Breakfast", 
+            "coreitem": "Pork",
+            "ingredients": ["Sausage","Biscuits","Gravy"]
+        }, 
+        {
+            "name": "Lasagna", 
+            "mealtype": "Dinner", 
+            "coreitem": "Pasta",
+            "ingredients": ["pasta","redsauce","cheese"]
+        }, 
+        {
+            "name": "Pizza", 
+            "mealtype": "Lunch", 
+            "coreitem": "Other",
+            "ingredients": ["Crust","cheese","pepperoni"]
+        }, 
+        {
+            "name": "Sloppy Joe", 
+            "mealtype": "Dinner", 
+            "coreitem": "Beef",
+            "ingredients": ["Ground beef","buns","spices"]
+        }
+    ]
+}

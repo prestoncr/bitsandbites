@@ -10,7 +10,7 @@ var recipieSchema = new Schema({
     unique: true
   }, 
   mealtype: String, 
-  core_item: String, 
+  coreitem: String, 
   ingredients: [String],
   created_at: Date,
   updated_at: Date
