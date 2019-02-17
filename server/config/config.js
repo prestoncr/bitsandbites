@@ -5,5 +5,5 @@ module.exports = {
   db: {
     uri: 'mongodb://prestoncr:123mdb123@ds113815.mlab.com:13815/bandb_cookbook', //place the URI of your mongo database here.
   }, 
-  port: 8080
+  port: process.env.PORT || 8080
 };

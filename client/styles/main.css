@@ -48,6 +48,13 @@ span { display: block; margin: 0 0 3px; font-size: 1.2em; font-weight: bold; }
   height: 250px;
   width: 600px;
 }
+.jumbotron-redirect
+{ 
+  opacity: .8;
+  width: 300px;
+  height: 300px;
+
+}
 .overlay {
   opacity: .5;
   position: absolute;

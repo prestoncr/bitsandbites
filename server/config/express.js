@@ -18,9 +18,11 @@ module.exports.init = function() {
   app.use(bodyParser.json());
 
   app.use('/', express.static('client'));
-
   app.use('/api/recipies',recipieRouter);
-  
+
+  app.get('/create', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/create.html'));
+     });
 
   app.all('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '../../../client/index.html'));
