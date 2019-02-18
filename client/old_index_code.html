@@ -26,21 +26,33 @@
               <tr ng-repeat="recipie in recipies | filter: query" ng-click="showDetails($index)">
                 <td>{{recipie.name}}</td>
                 <td>{{recipie.mealtype}}</td>
-                <td ng-click="addtolist($index)"><span style="color: green;" class="glyphicon glyphicon-plus"></span></td>
+                <td ng-click="deleteRecipie(recipie._id)"><span style="color: red;" class="glyphicon glyphicon-remove"></span></td>
               </tr>
             </table>
           </div>
         </div>
         <div class="col-md-4">
             <div class="jumbotron jumbotron-add">
-              <h2>Grocery List</h2>
-              <ul>
-                <li class="animate-repeat" ng-repeat = "recipie in grocerylist">
-                    <span>{{recipie.name}}</span>
-                    <span>{{recipie.mealtype}}</span>
-                    <span>{{recipie.coreitem}}</span>
-                </li>
-            </ul>
+              <h2>Add New Recipie</h2>
+              <form novalidate class="simple-form">
+                  <label for="Name">
+                      <span>Name</span>
+                      <input type="text" id="Name" ng-model="newRecipie.name" />
+                    </label>
+                    <label for="Mealtype">
+                        <span>Meal Type</span>
+                        <input type="text" id="mealtype" ng-model="newRecipie.mealtype" />
+                      </label>
+     
+                          <label for="Core_Item">
+                              <span>Core Item</span>
+                              <input type="text" id="core_item" ng-model="newRecipie.coreitem" />
+                            </label>
+                            <label for="Add">
+                                <button class = "btn btn-primary" ng-click="addRecipie()"> Add </button>
+                              </label>
+                           
+              </form>
             </div>
           </div>
        
@@ -51,7 +63,22 @@
               <p1>{{detailedInfo.mealtype}}<br /></p1>
               <p1>{{detailedInfo.coreitem}}<br /></p1>
           </div>
-        </div>                     
+        </div>
+
+    
+  <div class="col-md-4">
+    <div class="jumbotron jumbotron-redirect">
+      <button onclick="gotopage()">Other Page</button>
+      <script>
+        function gotopage() {
+          location.replace("create")
+        }
+        </script>
+     
+        </div>
+    </div> 
+        
+        
       </div>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>

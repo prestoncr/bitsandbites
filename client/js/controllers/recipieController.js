@@ -26,5 +26,14 @@ angular.module('recipies').controller('RecipiesController', ['$scope', 'Recipies
     $scope.showDetails = function(index) {
       $scope.detailedInfo = $scope.recipies[index];
     };
+
+    $scope.grocerylist = [];
+
+    $scope.addtolist = function(index) {
+     // $scope.grocerylist.push({name:$scope.recipies[index].name,
+       // mealtype:$scope.recipies[index].mealtype, coreitem:$scope.recipies[index].coreitem });
+       $scope.grocerylist.push($scope.recipies[index]);
+        console.log('item added to list ' + $scope.recipies[index].name);
+      };
   }
 ]);
