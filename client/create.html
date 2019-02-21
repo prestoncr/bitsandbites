@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -8,7 +9,59 @@
     <div class="container">
       <div class="row">
           <div class="overlay"></div>
-        <h1>Create a Grocery List</h1>
+        <h1>Create A Grocery List</h1>
+      </div>
+      <div class="row" ng-controller="RecipiesController">
+        <div class="col-md-6">
+          <div class="input-group" id="searchBar">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" ng-model="query" placeholder="Search..">
+          </div>
+          <div class="tableWrapper">
+            <table class="table table-striped table-hover">
+              <tr>
+                <th>Recipie</th>
+                <th>Meal Type</th>
+                <th></th>
+              </tr>
+              <tr ng-repeat="recipie in recipies | filter: query">
+                <td>{{recipie.name}}</td>
+                <td>{{recipie.mealtype}}</td>
+                <td ng-click="addtolist($index)"><span style="color: green;" class="glyphicon glyphicon-plus"></span></td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="jumbotron jumbotron-add">
+              <h2>Grocery List</h2>
+              <ul>
+                <li class="animate-repeat" ng-repeat = "recipie in grocerylist">
+                    <span style = "color:forestgreen;" class="glyphicon glyphicon-ok"></span><p3>     {{recipie.name}}</p3>
+                </li>
+                <button ng-click="displayIng()">Print List</button>
+           
+            </ul>
+            </div>
+          </div>
+        <div class="col-md-4">
+            <h2>Ingredients List</h2>
+            <div class="inglist">
+                <table class="table table-striped table-hover">
+                  <tr>
+                    <th>Ingredient</th>
+                    <th>Quantity</th>
+                    <th></th>
+                  </tr>
+                  <tr ng-repeat="ingredients in ingredients">
+                    <td>{{ingredients.x}}</td>
+                    <td>{{ingredients.y}}</td>
+                  </tr>
+                </table>
+              </div>
+        </div>                     
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

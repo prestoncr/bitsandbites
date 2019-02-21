@@ -3,6 +3,10 @@ angular.module('recipies', []).factory('Recipies', function($http) {
     getAll: function() {
       return $http.get('http://localhost:8080/api/recipies');
     },
+
+    getOne: function() {
+      return $http.get('http://localhost:8080/api/recipies/'  + id);
+    },
 	
 	create: function(recipie) {
 	  return $http.post('http://localhost:8080/api/recipies', recipie);

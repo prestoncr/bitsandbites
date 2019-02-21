@@ -23,6 +23,9 @@ module.exports.init = function() {
   app.get('/create', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/create.html'));
      });
+     app.get('/printlist', function (req, res) {
+      res.sendFile(path.join(__dirname + '../../../client/printlist.html'));
+       });
 
   app.all('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '../../../client/index.html'));

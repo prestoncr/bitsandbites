@@ -30,10 +30,25 @@ angular.module('recipies').controller('RecipiesController', ['$scope', 'Recipies
     $scope.grocerylist = [];
 
     $scope.addtolist = function(index) {
-     // $scope.grocerylist.push({name:$scope.recipies[index].name,
-       // mealtype:$scope.recipies[index].mealtype, coreitem:$scope.recipies[index].coreitem });
        $scope.grocerylist.push($scope.recipies[index]);
-        console.log('item added to list ' + $scope.recipies[index].name);
       };
+
+      $scope.displayIng = function() {
+        var i;
+        var j;
+        var obj;
+        $scope.ingredients = [];
+        for (i = 0; i < $scope.grocerylist.length; i++) 
+        {
+          for (j = 0; j < $scope.grocerylist[i].ingredients.length; j++) 
+          {   obj = {
+            "x": $scope.grocerylist[i].ingredients[j],
+            "y": 1
+           }
+            $scope.ingredients.push(obj);
+          }
+        }
+       };
+
   }
 ]);
