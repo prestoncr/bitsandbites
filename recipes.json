@@ -1,0 +1,92 @@
+{
+    "entries": [
+        {
+            "name": "Apple Pie", 
+            "mealtype": "Dessert", 
+            "coreitem": "Other",
+            "ingredients": 
+            [
+            { "iname":"apples", "quant":5, "mtype": "pounds"},
+            { "iname":"cinnamon", "quant":0.01, "mtype": "cups"},
+            { "iname":"piecrust", "quant":2, "mtype": "package(s)"}
+            ]
+        }, 
+        {
+            "name": "Cheeseburger", 
+            "mealtype": "Dinner", 
+            "coreitem": "Beef",
+            "ingredients": 
+            [
+            { "iname":"mincemeat", "quant":2, "mtype": "pounds"},
+            { "iname":"buns", "quant":1, "mtype": "package(s)"},
+            { "iname":"cheese", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "Chicken Parmesean", 
+            "mealtype": "Dinner", 
+            "coreitem": "Chicken",
+            "ingredients": 
+            [
+            { "iname":"chicken", "quant":2, "mtype": "pounds"},
+            { "iname":"breadcrumbs", "quant":1, "mtype": "package(s)"},
+            { "iname":"cheese", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "French Toast", 
+            "mealtype": "Breakfast", 
+            "coreitem": "Other",
+            "ingredients": 
+            [
+            { "iname":"bread", "quant":2, "mtype": "pounds"},
+            { "iname":"eggs", "quant":1, "mtype": "package(s)"},
+            { "iname":"cinnamon", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "Biscuits and Gravy", 
+            "mealtype": "Breakfast", 
+            "coreitem": "Pork",
+            "ingredients": 
+            [
+            { "iname":"biscuits", "quant":2, "mtype": "pounds"},
+            { "iname":"gravy", "quant":1, "mtype": "package(s)"},
+            { "iname":"sausage", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "Lasagna", 
+            "mealtype": "Dinner", 
+            "coreitem": "Pasta",
+            "ingredients": 
+            [
+            { "iname":"sheetpasta", "quant":2, "mtype": "pounds"},
+            { "iname":"cheese", "quant":1, "mtype": "package(s)"},
+            { "iname":"tomatosauce", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "Pizza", 
+            "mealtype": "Lunch", 
+            "coreitem": "Other",
+            "ingredients": 
+            [
+            { "iname":"dough", "quant":2, "mtype": "pounds"},
+            { "iname":"tomatosauce", "quant":1, "mtype": "package(s)"},
+            { "iname":"cheese", "quant":5, "mtype": "slices"}
+            ]
+        }, 
+        {
+            "name": "Sloppy Joe", 
+            "mealtype": "Dinner", 
+            "coreitem": "Beef",
+            "ingredients": 
+            [
+            { "iname":"buns", "quant":2, "mtype": "pounds"},
+            { "iname":"mincemeat", "quant":1, "mtype": "package(s)"},
+            { "iname":"fries", "quant":5, "mtype": "slices"}
+            ]
+        }
+    ]
+}

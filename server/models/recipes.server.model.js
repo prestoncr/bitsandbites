@@ -3,7 +3,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 /* Create your schema */
-var recipieSchema = new Schema({
+var recipeSchema = new Schema({
   name: {
     type: String, 
     required: true,
@@ -11,13 +11,17 @@ var recipieSchema = new Schema({
   }, 
   mealtype: String, 
   coreitem: String, 
-  ingredients: [String],
+  ingredients: [{
+    iname : String,
+    quant : Number,
+    mtype : String
+     }],
   created_at: Date,
   updated_at: Date
 });
 
 /* create a 'pre' function that adds the updated_at (and created_at if not already there) property */
-recipieSchema.pre('save', function(next) {
+recipeSchema.pre('save', function(next) {
   var currentTime = new Date;
   this.updated_at = currentTime;
   if(!this.created_at)
@@ -28,7 +32,7 @@ recipieSchema.pre('save', function(next) {
 });
 
 /* Use your schema to instantiate a Mongoose model */
-var recipie = mongoose.model('recipie', recipieSchema);
+var recipe = mongoose.model('recipe', recipeSchema);
 
 /* Export the model to make it avaiable to other parts of your Node application */
-module.exports = recipie;
+module.exports = recipe;

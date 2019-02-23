@@ -4,7 +4,7 @@ var path = require('path'),
     morgan = require('morgan'),
     bodyParser = require('body-parser'),
     config = require('./config'),
-    recipieRouter = require('../routes/recipies.server.routes');
+    recipeRouter = require('../routes/recipes.server.routes');
     
 
 module.exports.init = function() {
@@ -18,7 +18,7 @@ module.exports.init = function() {
   app.use(bodyParser.json());
 
   app.use('/', express.static('client'));
-  app.use('/api/recipies',recipieRouter);
+  app.use('/api/recipes',recipeRouter);
 
   app.get('/create', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/create.html'));
