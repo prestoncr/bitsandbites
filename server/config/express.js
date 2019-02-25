@@ -20,12 +20,21 @@ module.exports.init = function() {
   app.use('/', express.static('client'));
   app.use('/api/recipes',recipeRouter);
 
-  app.get('/create', function (req, res) {
+app.get('/create', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/create.html'));
      });
-     app.get('/printlist', function (req, res) {
-      res.sendFile(path.join(__dirname + '../../../client/printlist.html'));
-       });
+     
+app.get('/lookup', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/lookup.html'));
+     });
+
+app.get('/manage', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/manage.html'));
+     });
+
+app.get('/guide', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/guide.html'));
+     });
 
   app.all('/*', function(req, res) {
     res.sendFile(path.join(__dirname + '../../../client/index.html'));
