@@ -21,19 +21,31 @@ module.exports.init = function() {
   app.use('/api/recipes',recipeRouter);
 
 app.get('/create', function (req, res) {
-    res.sendFile(path.join(__dirname + '../../../client/create.html'));
+    res.sendFile(path.join(__dirname + '../../../client/pages/create.html'));
      });
      
 app.get('/lookup', function (req, res) {
-    res.sendFile(path.join(__dirname + '../../../client/lookup.html'));
+    res.sendFile(path.join(__dirname + '../../../client/pages/lookup.html'));
      });
 
 app.get('/manage', function (req, res) {
-    res.sendFile(path.join(__dirname + '../../../client/manage.html'));
+    res.sendFile(path.join(__dirname + '../../../client/pages/manage.html'));
      });
 
 app.get('/guide', function (req, res) {
-    res.sendFile(path.join(__dirname + '../../../client/guide.html'));
+    res.sendFile(path.join(__dirname + '../../../client/pages/guide.html'));
+     });
+
+app.get('/addrec', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/pages/addrec.html'));
+     });
+     
+app.get('/uprec', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/pages/uprec.html'));
+     });
+
+app.get('/delrec', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/pages/delrec.html'));
      });
 
   app.all('/*', function(req, res) {

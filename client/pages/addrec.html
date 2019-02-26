@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body ng-app="bitsandbites">
+    <div class="container">
+      <div class="row">
+          <div class="overlay"></div>
+        <h1>Create A Grocery List</h1>
+      </div>
+      <div class="row" ng-controller="RecipesController">
+        
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-add">
+            <h2>Add New Recipe</h2>
+            <form novalidate class="simple-form">
+                <label for="Name">
+                  <span>Name</span>
+                  <input type="text" id="Name" ng-model="newRecipe.name" />
+                  </label>
+                <label for="MealType">
+                  <span>MealType</span>
+                  <input type="text" id="MealType" ng-model="newRecipe.mealtype" />
+                  </label>
+                <label for="CoreItem">
+                  <span>Core Item</span>
+                  <input type="text" id="coreitem" ng-model="newRecipe.coreitem" />
+                  </label>
+                <label for="Add">
+                  <button class = "btn btn-primary" ng-click="addRecipe()"> Add </button>
+                   </label>
+                         
+            </form>
+          </div>
+        </div>
+    
+                         
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/factories/recipeFactory.js"></script>
+    <script src="js/controllers/recipeController.js"></script>
+  </body>
+</html>
