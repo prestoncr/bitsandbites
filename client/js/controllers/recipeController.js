@@ -7,6 +7,8 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     });
 
     $scope.detailedInfo = undefined;
+    $scope.nameToUpdate = undefined;
+    $scope.selectedID = undefined;
 
     $scope.addRecipe = function() {
 	  
@@ -16,19 +18,17 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       });
     };
 
-    $scope.deleteRecipe = function(id) {
-      Recipes.delete(id).then(function(err){
+    $scope.deleteRecipe = function() {
+      Recipes.delete($scope.selectedID).then(function(err){
         if (err) console.log(err);
         else $location.path('/');
       });
     };
     
-    $scope.nameToUpdate = undefined;
-    $scope.idToUpdate = undefined;
     $scope.showDetails = function(index, id) {
       $scope.detailedInfo = $scope.recipes[index];
       $scope.nameToUpdate = $scope.recipes[index].name;
-      $scope.idToUpdate = id;
+      $scope.selectedID = id;
     };
 
     $scope.grocerylist = [];
@@ -39,7 +39,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
 
       $scope.updateRecipe = function() {
         $scope.newInfo.name = $scope.nameToUpdate;
-        Recipes.update($scope.idToUpdate, $scope.newInfo).then(function(err){
+        Recipes.update($scope.selectedID, $scope.newInfo).then(function(err){
           if (err) console.log(err);
           else $location.path('/');
         });
