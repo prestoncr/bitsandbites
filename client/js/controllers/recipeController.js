@@ -22,15 +22,27 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         else $location.path('/');
       });
     };
-
-    $scope.showDetails = function(index) {
+    
+    $scope.nameToUpdate = undefined;
+    $scope.idToUpdate = undefined;
+    $scope.showDetails = function(index, id) {
       $scope.detailedInfo = $scope.recipes[index];
+      $scope.nameToUpdate = $scope.recipes[index].name;
+      $scope.idToUpdate = id;
     };
 
     $scope.grocerylist = [];
 
     $scope.addtolist = function(index) {
        $scope.grocerylist.push($scope.recipes[index]);
+      };
+
+      $scope.updateRecipe = function() {
+        $scope.newInfo.name = $scope.nameToUpdate;
+        Recipes.update($scope.idToUpdate, $scope.newInfo).then(function(err){
+          if (err) console.log(err);
+          else $location.path('/');
+        });
       };
 
       $scope.displayIng = function() {

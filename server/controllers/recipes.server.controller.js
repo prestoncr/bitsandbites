@@ -30,7 +30,7 @@ exports.update = function(req, res) {
 
     recipe.name = req.body.name;
     recipe.mealtype = req.body.mealtype;
-    recipe.core_item = req.body.core_item;
+    recipe.coreitem = req.body.coreitem;
   
     recipe.save(function(err) {
       if (err) throw err;

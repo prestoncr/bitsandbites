@@ -8,6 +8,10 @@ angular.module('recipes', []).factory('Recipes', function($http) {
 	  return $http.post('http://localhost:8080/api/recipes', recipe);
     }, 
 
+    update: function(id, recipe) {
+      return $http.put('http://localhost:8080/api/recipes/' + id, recipe);
+      }, 
+
     getOne: function() {
       return $http.get('http://localhost:8080/api/recipes/'  + id);
     },
