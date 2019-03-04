@@ -21,11 +21,29 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     };
 
     $scope.addRecipe = function() {
-	  
       Recipes.create($scope.newRecipe).then(function(err){
         if (err) console.log(err);
         else $location.path('/');
       });
+    };
+
+    $scope.getGroup = function() {
+      var i;
+      var obj;
+      $scope.chosendata = [];
+      for (i = 0; i < $scope.recipes.length; i++) 
+      {
+        if ($scope.recipes[i].mealtype == $scope.mealchoice)
+         {
+          if ($scope.recipes[i].coreitem == $scope.itemchoice)
+          {
+            obj = $scope.recipes[i];
+            $scope.chosendata.push(obj);
+          }
+         }
+      }
+      
+     
     };
 
     $scope.deleteRecipe = function() {

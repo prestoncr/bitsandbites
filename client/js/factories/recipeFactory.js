@@ -12,6 +12,11 @@ angular.module('recipes', []).factory('Recipes', function($http) {
       return $http.put('http://localhost:8080/api/recipes/' + id, recipe);
       }, 
 
+      getGroup: function(mealtype, coreitem) {
+        return $http.get('http://localhost:8080/api/recipes/oof', mealtype, coreitem);
+        }, 
+  
+
     getOne: function() {
       return $http.get('http://localhost:8080/api/recipes/'  + id);
     },

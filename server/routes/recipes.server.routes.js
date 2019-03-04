@@ -4,6 +4,9 @@ var recipes = require('../controllers/recipes.server.controller.js'),
     router = express.Router();
  
 
+router.route('/oof')
+  .get(recipes.read); 
+
 router.route('/')
   .get(recipes.list)
   .post(recipes.create);

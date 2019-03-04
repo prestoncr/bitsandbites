@@ -8,8 +8,52 @@
     <div class="container">
       <div class="row">
           <div class="overlay"></div>
-        <h1>Bits and Bites</h1>
-        <p1>Developement in Progress</p1>
+        <h1>Create A Grocery List</h1>
+      </div>
+      <div class="row" ng-controller="RecipesController">
+
+          <div class="col-md-4">
+     
+              <h2>Filter Recipe</h2>
+              <form novalidate class="simple-form">
+                  <label for="MealType">
+                    <span>MealType</span>
+                    <input type="text" id="MealType" ng-model="mealchoice" />
+                    </label>
+                  <label for="CoreItem">
+                    <span>Core Item</span>
+                    <input type="text" id="coreitem" ng-model="itemchoice" />
+                    </label>
+                  <label for="Add">
+                    <button class = "btn btn-primary" ng-click="getGroup()"> Refine </button>
+                     </label>                         
+              </form>
+          </div>
+        
+        <div class="col-md-6">
+          <div class="input-group" id="searchBar">
+            <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+            <input type="text" class="form-control" ng-model="query" placeholder="Search..">
+          </div>
+          <div class="tableWrapper">
+            <table class="table table-striped table-hover">
+              <tr>
+                <th>Recipe</th>
+                <th>Meal Type</th>
+                <th></th>
+              </tr>
+              <tr ng-repeat="chosendata in chosendata | filter: query" ng-click="showDetails($index, chosendata._id)">
+                <td>{{chosendata.name}}</td>
+                <td>{{chosendata.mealtype}}</td>              
+              </tr>
+            </table>
+          </div>
+        </div>
+
+    
+                         
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
     <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

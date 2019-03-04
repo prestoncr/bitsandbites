@@ -20,8 +20,12 @@ exports.create = function(req, res) {
 
 /* Show the current recipe */
 exports.read = function(req, res) {
-
-  res.json(req.recipe);
+  var x = req.mealtype;
+  var y = req.coreitem;
+  Recipe.find({'mealtype': x, 'coreitem': y}, {sort: 'name'}, function (err, recipes){
+    if (err) console.log(err);
+    else res.json(recipes);
+  });
 };
 
 /* Update a recipe */
@@ -47,7 +51,6 @@ exports.delete = function(req, res) {
 
 
 exports.list = function(req, res) {
- 
   Recipe.find({},null, {sort: 'name'}, function (err, recipes){
     if (err) console.log(err);
     else res.json(recipes);
