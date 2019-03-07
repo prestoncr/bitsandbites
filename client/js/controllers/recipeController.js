@@ -9,6 +9,8 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.detailedInfo = undefined;
     $scope.nameToUpdate = undefined;
     $scope.selectedID = undefined;
+    $scope.alling = undefined;
+    $scope.allsteps = undefined;
     $scope.choices = [{id: 'choice1'}];
 
     $scope.addNewChoice = function() {
@@ -57,6 +59,35 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       $scope.detailedInfo = $scope.recipes[index];
       $scope.nameToUpdate = $scope.recipes[index].name;
       $scope.selectedID = id;
+    };
+
+    $scope.concatsteps = function(index) {
+      $scope.detailedInfo = $scope.recipes[index];
+      $scope.alling = "";
+      $scope.allsteps = "";
+      var i;
+      for (i = 0; i < $scope.detailedInfo.ingredients.length; i++)
+      {
+        $scope.alling += $scope.detailedInfo.ingredients[i].iname;
+        $scope.alling += " ";
+        $scope.alling += $scope.detailedInfo.ingredients[i].quant;
+        $scope.alling += " ";
+        $scope.alling += $scope.detailedInfo.ingredients[i].mtype;
+        $scope.alling += "\n";
+      }
+      //could very easily format steps by adding 
+      //$scope.allsteps += "Step ";
+      //$scope.allsteps += i.toString;
+      //$scope.allsteps += ": ";
+      //this way user doesnt have to number steps when inputting recipe
+      for (i = 0; i < $scope.detailedInfo.steps.length; i++)
+      {
+        $scope.allsteps += $scope.detailedInfo.steps[i];
+        $scope.allsteps += "\n";
+      }
+
+
+     
     };
 
     $scope.grocerylist = [];

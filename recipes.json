@@ -9,6 +9,12 @@
             { "iname":"apples", "quant":5, "mtype": "pounds"},
             { "iname":"cinnamon", "quant":0.01, "mtype": "cups"},
             { "iname":"piecrust", "quant":2, "mtype": "package(s)"}
+            ],
+            "steps": 
+            [
+                "Step1: Make Crust",
+                 "Step2: Prepare Filling",
+                 "Step3: Assemble Pie and Bake"
             ]
         }, 
         {
@@ -20,7 +26,14 @@
             { "iname":"mincemeat", "quant":2, "mtype": "pounds"},
             { "iname":"buns", "quant":1, "mtype": "package(s)"},
             { "iname":"cheese", "quant":5, "mtype": "slices"}
+            ],
+            "steps": 
+            [
+                "Step1: Make burger patty",
+                 "Step2: Grill patty",
+                 "Step3: Assemble burger"
             ]
+            
         }, 
         {
             "name": "Chicken Parmesean", 

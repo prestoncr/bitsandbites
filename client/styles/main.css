@@ -10,6 +10,14 @@
   opacity: .9;
 }
 
+.selecttocook
+{
+  max-height: 500px;
+  max-width: 1000px;
+  overflow: auto; 
+  opacity: .9;
+}
+
 h1{
   color: crimson;
   font-size:  3vw;
@@ -50,6 +58,12 @@ div
   width: 600px;
   height: 300px;
 
+}
+.jumbotron-steps
+{ 
+  opacity: .7;
+  height: 500px;
+  width: 600px;
 }
 label { width: 200px; float: left; margin: 0 20px 0 0; }
 span { display: block; margin: 0 0 3px; font-size: 1.2em; font-weight: bold; }

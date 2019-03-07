@@ -16,6 +16,7 @@ var recipeSchema = new Schema({
     quant : Number,
     mtype : String
      }],
+  steps: [String],
   created_at: Date,
   updated_at: Date
 });
