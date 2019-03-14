@@ -12,15 +12,19 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.alling = undefined;
     $scope.allsteps = undefined;
     $scope.choices = [{id: 'choice1'}];
-
+    $scope.cquants = [{id: 'cquant1'}];
+    $scope.cmtypes = [{id: 'cmtype1'}];
+    
     $scope.addNewChoice = function() {
       var newItemNo = $scope.choices.length+1;
       $scope.choices.push({'id':'choice'+newItemNo});
+      $scope.cquants.push({'id':'cquant'+newItemNo});
+      $scope.cmtypes.push({'id':'cmtype'+newItemNo});
     };
 
-    $scope.showAddChoice = function(choice) {
-      return choice.id === $scope.choices[$scope.choices.length-1].id;
-    };
+    // $scope.showAddChoice = function(choice) {
+    //   return choice.id === $scope.choices[$scope.choices.length-1].id;
+    // };
 
     $scope.addRecipe = function() {
       Recipes.create($scope.newRecipe).then(function(err){
@@ -93,7 +97,14 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.grocerylist = [];
 
     $scope.addtolist = function(index) {
-       $scope.grocerylist.push($scope.recipes[index]);
+      var i;
+      var shouldadd = 1;
+      for (i = 0; i < $scope.grocerylist.length; i++)
+      {
+        if ($scope.grocerylist[i].name == $scope.recipes[index].name)
+        {shouldadd = 0;}
+      }
+       if (shouldadd)$scope.grocerylist.push($scope.recipes[index]);
       };
 
       $scope.updateRecipe = function() {
@@ -120,19 +131,47 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         //instance but save the and add the number to the first instance where we found that
         //ingredient, sounds super complicated but just understand the general premise
         //and find an efficient way to accomplish the goal
-        
+          
         var i;
         var j;
+        var z;
         var obj;
+        var exist = 0;
+        var location = 0;
+        var needtopush = 1;
         $scope.ingredients = [];
         for (i = 0; i < $scope.grocerylist.length; i++) 
         {
           for (j = 0; j < $scope.grocerylist[i].ingredients.length; j++) 
-          {   obj = {
-            "x": $scope.grocerylist[i].ingredients[j].iname,
-            "y": 1
-           }
-            $scope.ingredients.push(obj);
+          {  
+              for (z = 0; z <  $scope.ingredients.length;z++)
+              {
+                if ($scope.grocerylist[i].ingredients[j].iname == 
+                    $scope.ingredients[z].x)
+                    { 
+                      exist = 1;
+                      location = z;
+                      needtopush = 0;
+                    }
+              }
+             if (exist == 1) 
+             {
+              $scope.ingredients[location].y += $scope.grocerylist[i].ingredients[j].quant;
+              exist = 0;
+              location = 0;
+             } 
+             else {
+              obj = {
+                "x": $scope.grocerylist[i].ingredients[j].iname,
+                "y": $scope.grocerylist[i].ingredients[j].quant,
+                "z": $scope.grocerylist[i].ingredients[j].mtype
+               }
+               exist = 0;
+               location = 0;
+             }
+          
+            if(needtopush)$scope.ingredients.push(obj);
+            needtopush = 1;
           }
         }
        };
