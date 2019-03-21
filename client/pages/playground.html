@@ -1,0 +1,31 @@
+
+
+
+          <div class="ingaddform">
+            <div class="form-group" ng-repeat="choice in choices">
+              <label for="choice" ng-show="$first">Ingredient Name</label>
+              <input type="text" ng-model="choice.name" name="" placeholder="Ingredient Name">
+              <button ng-show="$last" ng-click="addNewChoice()">Add another Ingredient</button>
+            </div>
+          </div>
+
+          <div class="ingaddform">
+            <div class="form-group" ng-repeat="cquant in cquants">
+              <label for="cquant" ng-show="$first">Ingredient Quantity</label>
+              <input type="text" ng-model="cquant.name" name="" placeholder="Ingredient Quantity">
+            </div>
+          </div>
+
+          <div class="ingaddform">
+            <div class="form-group" ng-repeat="cmtype in cmtypes">
+              <label for="cmtype" ng-show="$first">Measurement Type</label>
+              <input type="text" ng-model="cmtype.name" name="" placeholder="Measurement Type">
+            </div>
+          </div>
+
+
+
+
+
+
+

@@ -1,74 +1,78 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/other.css">
-  </head>
-  <body ng-app="bitsandbites">
-    <div class="container">
-      <div class="row">
-          <div class="overlay"></div>
-        <h1>Create A Grocery List</h1>
-      </div>
-      <div class="row" ng-controller="RecipesController">
-        
-        <div class="col-md-4">
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/addrec.css">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+
+<div ng-controller="RecipesController">
+<h1>Create Recipe</h1>
+<button type = "button" class = "btn btn-primary" id="submit-button" ng-click="addRecipe()">Submit Recipe</button>
+
+
+
      
-            <h2>Add New Recipe</h2>
-            <form novalidate class="simple-form">
-                <label for="Name">
-                  <span>Name</span>
-                  <input type="text" id="Name" ng-model="newRecipe.name" />
-                  </label>
-                <label for="MealType">
-                  <span>MealType</span>
-                  <input type="text" id="MealType" ng-model="newRecipe.mealtype" />
-                  </label>
-                <label for="CoreItem">
-                  <span>Core Item</span>
-                  <input type="text" id="coreitem" ng-model="newRecipe.coreitem" />
-                  </label>
-                <label for="Add">
-                  <button class = "btn btn-primary" ng-click="addRecipe()"> Add </button>
-                   </label>                         
-            </form>
-        </div>
-        <div class="col-md-4">
+    <form class = "form">
+    <div class="form-row">
+     <div class="col">
+     <input type="text" class="form-control" placeholder="Recipe name" ng-model="newRecipe.name" />
+     </div>
+     <div class="col">
+     <input type="text" class="form-control" placeholder="Meal Type" ng-model="newRecipe.mealtype" />
+     </div>
+     <div class="col">
+     <input type="text" class="form-control" placeholder="Core Item" ng-model="newRecipe.coreitem" />
+     </div>
+     </div>
+     </form>
 
-            <div id="addingthings">
 
-        <div class="ingaddform">   
-        <div class="form-group" ng-repeat="choice in choices">
-          <label for="choice" ng-show="$first">Ingredient Name</label>
-          <input type="text" ng-model="choice.name" name="" placeholder="Ingredient Name">
-          <button ng-show="$last" ng-click="addNewChoice()">Add another Ingredient</button>
-        </div>
-      </div>      
+    <form class = "form">
+    <div class="form-row">
+     <div class="col">
+        <div class="ingnameclass">
+            <div class="form-group" ng-repeat="choice in choices">
+              <label for="choice" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="choice.name" name="" placeholder="Ingredient Name">
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewChoice()">Add another Ingredient</button>
+            </div>
+          </div>
+     </div>
+     <div class="col">
+        <div class="cquantclass">
+            <div class="form-group" ng-repeat="cquant in cquants">
+              <label for="cquant" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="cquant.name" name="" placeholder="Ingredient Quantity">
+            </div>
+          </div>
+     </div>
+     <div class="col">        
+      <div class="cmtypeclass">
+            <div class="form-group" ng-repeat="cmtype in cmtypes">
+              <label for="cmtype" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="cmtype.name" name="" placeholder="Measurement Type">
+            </div>
+          </div>
+     </div>
+     </div>
+     </form>
 
-      <div class="ingaddform"> 
-        <div class="form-group" ng-repeat="cquant in cquants">
-          <label for="cquant" ng-show="$first">Ingredient Quantity</label>
-          <input type="text" ng-model="cquant.name" name="" placeholder="Ingredient Quantity">
-        </div>
-      </div>
 
-      <div class="ingaddform">       
-        <div class="form-group" ng-repeat="cmtype in cmtypes">
-          <label for="cmtype" ng-show="$first">Measurement Type</label>
-          <input type="text" ng-model="cmtype.name" name="" placeholder="Measurement Type">
-        </div>
-      </div>
 
-      </div><!--end addingthings-->
-    
-      </div>      
-      </div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/factories/recipeFactory.js"></script>
-    <script src="js/controllers/recipeController.js"></script>
-  </body>
+
+</div>
+</div>
+</div>     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="js/controllers/recipeController.js"></script>
+</body>
 </html>
