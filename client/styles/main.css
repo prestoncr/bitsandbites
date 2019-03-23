@@ -7,7 +7,6 @@
   margin:0 auto;
 }
 
-
 .inglist
 {
   max-height: 200px;
@@ -65,7 +64,6 @@ div
   max-height: 400px;
   overflow: auto; 
   opacity: .9;
-
 }
 .jumbotron-add
 { 

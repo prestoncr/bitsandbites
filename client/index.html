@@ -1,64 +1,63 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-  </head>
-  <body ng-app="bitsandbites">
-    <div class="container">
-      <div class="row">
-          <div class="overlay"></div>
-        <h1>Bits and Bites</h1>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/indexpage.css">
+</head>
 
-        <div class="col-md-4">
-          <div class="jumbotron jumbotron-redirect">
-            <button onclick="gotopage1()">Create A Grocery List</button>
-            <script>
-              function gotopage1() {
-                location.replace("create")
-              }
-              </script>
-           
-              </div>
-          </div> 
-          <div class="col-md-4">
-            <div class="jumbotron jumbotron-redirect">
-              <button onclick="gotopage2()">Start Cooking</button>
-              <script>
-                function gotopage2() {
-                  location.replace("guide")
-                }
-                </script>
-             
-                </div>
-            </div>
-            <div class="col-md-4">
-              <div class="jumbotron jumbotron-redirect">
-                <button onclick="gotopage3()">Manage Recipes</button>
-                <script>
-                  function gotopage3() {
-                    location.replace("manage")
-                  }
-                  </script>
-               
-                  </div>
-              </div>
-              <div class="col-md-4">
-                <div class="jumbotron jumbotron-redirect">
-                  <button onclick="gotopage4()">View Cookbook</button>
-                  <script>
-                    function gotopage4() {
-                      location.replace("lookup")
-                    }
-                    </script>
-                 
-                    </div>
-                </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
-    <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/factories/recipeFactory.js"></script>
-    <script src="js/controllers/recipeController.js"></script>
-  </body>
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+
+<div ng-controller="RecipesController">
+  <img src="source/cooltext319038153449073.png" class="img-fluid" id = "bandb" alt="Responsive image">
+
+<button class="btn btn-success btn-lg btn-block" id="cooking-button" onclick="gotopage2()">Start Cooking</button>
+<script>
+  function gotopage2() {
+    location.replace("guide")
+  }
+  </script>
+
+<button class="btn btn-primary btn-lg btn-block" id="grocery-button" onclick="gotopage1()">Create A Grocery List</button>
+<script>
+  function gotopage1() {
+  location.replace("create")
+  }
+</script>
+
+<button class="btn btn-warning btn-lg btn-block" id="lookup-button" onclick="gotopage4()">View Cookbook</button>
+<script>
+  function gotopage4() {
+    location.replace("lookup")
+  }
+</script>
+
+<button class="btn btn-danger btn-lg btn-block" id="grocery-button" onclick="gotopage3()">Manage Recipes</button>
+<script>
+  function gotopage3() {
+  location.replace("manage")
+  }
+</script>
+
+   
+
+   
+
+   
+
+
+
+
+</div>
+</div>
+</div>     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="js/controllers/recipeController.js"></script>
+</body>
 </html>
