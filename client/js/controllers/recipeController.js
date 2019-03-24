@@ -9,8 +9,11 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.detailedInfo = undefined;
     $scope.nameToUpdate = undefined;
     $scope.selectedID = undefined;
+    $scope.itemchoice = "";
+    $scope.mealchoice = "";
     $scope.alling = undefined;
     $scope.allsteps = undefined;
+    $scope.displayword1 = "";
     $scope.choices = [{id: 'choice1'}];
     $scope.cquants = [{id: 'cquant1'}];
     $scope.cmtypes = [{id: 'cmtype1'}];
@@ -62,9 +65,11 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       $scope.chosendata = [];
       for (i = 0; i < $scope.recipes.length; i++) 
       {
-        if ($scope.recipes[i].mealtype == $scope.mealchoice)
+        if (($scope.recipes[i].mealtype == $scope.mealchoice) ||
+             ($scope.mealchoice == ""))
          {
-          if ($scope.recipes[i].coreitem == $scope.itemchoice)
+          if (($scope.recipes[i].coreitem == $scope.itemchoice) ||
+           ($scope.itemchoice == ""))
           {
             obj = $scope.recipes[i];
             $scope.chosendata.push(obj);
@@ -81,6 +86,25 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         else $location.path('/');
       });
     };
+
+    $scope.viewRec = function (index)
+    {
+      $scope.displayword1 = "Ingredients:";
+      $scope.detailedInfo = $scope.chosendata[index];
+      $scope.alling = "";
+      var i;
+      for (i = 0; i < $scope.detailedInfo.ingredients.length; i++)
+      { 
+       
+        $scope.alling += $scope.detailedInfo.ingredients[i].iname.charAt(0).toUpperCase()
+        + $scope.detailedInfo.ingredients[i].iname.slice(1);
+        $scope.alling += " ";
+        $scope.alling += $scope.detailedInfo.ingredients[i].quant;
+        $scope.alling += " ";
+        $scope.alling += $scope.detailedInfo.ingredients[i].mtype;
+        $scope.alling += "\n";
+      }
+    }
     
     $scope.showDetails = function(index, id) {
       $scope.detailedInfo = $scope.recipes[index];
@@ -95,7 +119,8 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       var i;
       for (i = 0; i < $scope.detailedInfo.ingredients.length; i++)
       {
-        $scope.alling += $scope.detailedInfo.ingredients[i].iname;
+        $scope.alling += $scope.detailedInfo.ingredients[i].iname.charAt(0).toUpperCase()
+        + $scope.detailedInfo.ingredients[i].iname.slice(1);
         $scope.alling += " ";
         $scope.alling += $scope.detailedInfo.ingredients[i].quant;
         $scope.alling += " ";
