@@ -8,27 +8,9 @@
     <div class="container">
       <div class="row">
           <div class="overlay"></div>
-        <h1>View Cookbook</h1>
+        <h1>Delete a Recipe</h1>
       </div>
       <div class="row" ng-controller="RecipesController">
-
-          <div class="col-md-4">
-     
-              <h2>Filter Recipe</h2>
-              <form novalidate class="simple-form">
-                  <label for="MealType">
-                    <span>MealType</span>
-                    <input type="text" id="MealType" ng-model="mealchoice" />
-                    </label>
-                  <label for="CoreItem">
-                    <span>Core Item</span>
-                    <input type="text" id="coreitem" ng-model="itemchoice" />
-                    </label>
-                  <label for="Add">
-                    <button class = "btn btn-primary" ng-click="getGroup()"> Refine </button>
-                     </label>                         
-              </form>
-          </div>
         
         <div class="col-md-6">
           <div class="input-group" id="searchBar">
@@ -42,14 +24,23 @@
                 <th>Meal Type</th>
                 <th></th>
               </tr>
-              <tr ng-repeat="chosendata in chosendata | filter: query" ng-click="showDetails($index, chosendata._id)">
-                <td>{{chosendata.name}}</td>
-                <td>{{chosendata.mealtype}}</td>              
+              <tr ng-repeat="recipe in recipes | filter: query" ng-click="showDetails($index, recipe._id)">
+                <td>{{recipe.name}}</td>
+                <td>{{recipe.mealtype}}</td>              
               </tr>
             </table>
           </div>
         </div>
 
+        <div class="col-md-4">
+          <div class="jumbotron jumbotron-add">
+            <h2>Selected Recipe</h2>
+            <p1>{{detailedInfo.name}}<br /></p1>
+            <p1>{{detailedInfo.mealtype}}<br /></p1>
+            <p1>{{detailedInfo.coreitem}}<br /></p1>
+            <button class = "btn btn-primary" ng-click="deleteRecipe()"> Delete </button>
+          </div>
+        </div>
     
                          
       </div>

@@ -1,0 +1,74 @@
+  
+  div
+  {
+    color: navy;
+    font-family: verdana;
+    font-size: 16px;
+  }
+  #searchBar {
+    width: 400px;
+    margin-left:100px;
+    opacity: .60;
+  }
+  .tableWrapper {
+    max-height: 400px;
+    background: rgb(247, 247, 247, .50); 
+    margin-left: 100px;
+    width: 400px;
+    overflow: auto; 
+    opacity: .9;
+  }
+
+ p1
+ {
+    font-family: fantasy;  
+    color: navy;
+    font-size: 18pt;  
+
+
+ } 
+.jumbotron-add
+{ 
+  padding-top:10px;
+  padding-bottom:10px;
+  overflow: auto;
+  background: rgb(247, 247, 247, .35); 
+  margin-left: 100px;
+  width: 500px;
+  height: 300px;
+
+}
+#delbut
+{
+    margin-top: 30px;
+}
+  h1{
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    margin-top: 45px;
+    margin-bottom: 30px;
+    color: crimson;
+    font-size:  4vw;
+    font-family: verdana, bold;
+  }
+
+  h2
+{
+padding-top: 10px;
+font-size: 30pt;
+color:navy;
+font-family: fantasy, bold;
+}
+  
+  
+  .overlay {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../source/board-bunch-cooking-349609.jpg) repeat; background-size: cover;
+    background-size: cover;
+  }

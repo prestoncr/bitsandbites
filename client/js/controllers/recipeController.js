@@ -17,6 +17,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.choices = [{id: 'choice1'}];
     $scope.cquants = [{id: 'cquant1'}];
     $scope.cmtypes = [{id: 'cmtype1'}];
+    $scope.chsteps = [{id: 'chstep1'}];
     $scope.newRecipe =  {
       "name": "",
       "mealtype": "",
@@ -26,15 +27,14 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
   };
    
     $scope.addNewChoice = function() {
-      $scope.newRecipe 
       var newItemNo = $scope.choices.length+1;
       $scope.choices.push({'id':'choice'+newItemNo});
       $scope.cquants.push({'id':'cquant'+newItemNo});
       $scope.cmtypes.push({'id':'cmtype'+newItemNo});
-      // console.log($scope.choices[newItemNo-2].name);
-      // console.log($scope.cquants[newItemNo-2].name);
-      // console.log($scope.cmtypes[newItemNo-2].name);
-
+    };
+    $scope.addNewStep = function() {
+      var newItemNo = $scope.chsteps.length+1;
+      $scope.chsteps.push({'id':'chstep'+newItemNo});
     };
 
     // $scope.showAddChoice = function(choice) {
@@ -50,8 +50,11 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
           "quant": $scope.cquants[i].name,
           "mtype": $scope.cmtypes[i].name
          };
-         console.log("here");
         $scope.newRecipe.ingredients.push(obj);
+      }
+      for (j = 0; j < $scope.chsteps.length; j++)
+      {
+        $scope.newRecipe.steps.push($scope.chsteps[j].name);
       }
       Recipes.create($scope.newRecipe).then(function(err){
         if (err) console.log(err);

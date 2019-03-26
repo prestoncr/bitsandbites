@@ -23,10 +23,24 @@
      <input type="text" class="form-control" placeholder="Recipe name" ng-model="newRecipe.name" />
      </div>
      <div class="col">
-     <input type="text" class="form-control" placeholder="Meal Type" ng-model="newRecipe.mealtype" />
+            <select class="form-control" id="selmealtype" ng-model = "newRecipe.mealtype">
+             <option value="" selected disabled>Meal Type</option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Dessert</option>
+              <option>Other</option>
+            </select>
      </div>
      <div class="col">
-     <input type="text" class="form-control" placeholder="Core Item" ng-model="newRecipe.coreitem" />
+        <select class="form-control" id="selcoretype" ng-model = "newRecipe.coreitem">
+            <option value="" selected disabled>Core Item</option>
+             <option>Chicken</option>
+             <option>Beef</option>
+             <option>Seafood</option>
+             <option>Starch</option>
+             <option>Other</option>
+           </select>
      </div>
      </div>
      </form>
@@ -55,13 +69,34 @@
       <div class="cmtypeclass">
             <div class="form-group" ng-repeat="cmtype in cmtypes">
               <label for="cmtype" ng-show="$first"></label>
-              <input type="text" class="form-control" ng-model="cmtype.name" name="" placeholder="Measurement Type">
+              <select class="form-control" id="selmealtype" ng-model = "cmtype.name" name = "">
+                  <option value="" selected disabled>Measurement Type</option>
+                   <option>Pound(s)</option>
+                   <option>Ounce(s)</option>
+                   <option>Cup(s)</option>
+                   <option>Tsp(s)</option>
+                   <option>Tbsp(s)</option>
+                   <option>Package(s)</option>
+                   <option>Unit(s)</option>
+                 </select>
             </div>
           </div>
      </div>
      </div>
      </form>
 
+ <form class = "form">
+    <div class="form-row">
+     <div class="col">
+        <div class="stepsinput">
+            <div class="form-group" ng-repeat="chstep in chsteps">
+              <label for="chstep" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="chstep.name" name="" placeholder="Instruction.. "> 
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewStep()">Add another Step</button>
+            </div>
+          </div>
+     </div>
+    </form>
 
 
 

@@ -1,0 +1,52 @@
+.overlay {
+    opacity: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../source/board-bunch-cooking-349609.jpg) repeat; background-size: cover;
+    background-size: cover;
+  }
+ 
+  h1{
+ 
+    margin-left: 400px;
+    width: 40%;
+    margin-top: 100px;
+    color: crimson;
+    font-size:  4vw;
+    font-family: verdana, bold;
+  }
+  #bandb
+  {
+      width: 550px;
+      height: 120px;
+      margin-left: 365px;
+      margin-top: 85px;   
+  }
+  #cooking-button
+  {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  margin-top: 20px;
+  }
+  
+  #grocery-button
+  {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+  margin-top: 45px;
+  }
+  #lookup-button
+  {
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-top: 45px;
+  color: white;
+  
+  }
+  
