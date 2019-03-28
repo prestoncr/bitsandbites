@@ -16,10 +16,24 @@
     <form class = "form">
     <div class="form-row" id = "refine">
      <div class="col">
-     <input type="text" class="form-control" placeholder="Meal Type" ng-model="mealchoice" />
+     <select class="form-control" ng-model = "mealchoice">
+      <option value="" selected disabled>Meal Type</option>
+       <option>Breakfast</option>
+       <option>Lunch</option>
+       <option>Dinner</option>
+       <option>Dessert</option>
+       <option>Other</option>
+     </select>
      </div>
      <div class="col">
-     <input type="text" class="form-control" placeholder="Core Item" ng-model="itemchoice" />
+     <select class="form-control" ng-model = "itemchoice">
+      <option value="" selected disabled>Core Item</option>
+       <option>Chicken</option>
+       <option>Beef</option>
+       <option>Seafood</option>
+       <option>Starch</option>
+       <option>Other</option>
+     </select>
      </div>
      <div class="col">
         <button type = "button" class = "btn btn-primary" id="submit-button" ng-click="getGroup()">Refine Selection</button>

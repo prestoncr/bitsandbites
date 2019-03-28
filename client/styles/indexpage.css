@@ -27,10 +27,11 @@ h1{
 }
 #bandb
 {
-    width: 550px;
-    height: 120px;
-    margin-left: 365px;
-    margin-top: 85px;   
+    height: 45%;
+    width: 45%;
+    margin-top: 75px;
+    margin-left: 350px;
+    margin-bottom: 20px;
 }
 #cooking-button
 {
