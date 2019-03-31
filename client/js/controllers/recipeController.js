@@ -140,14 +140,22 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         $scope.allsteps += $scope.detailedInfo.steps[i];
         $scope.allsteps += "\n";
       }
-
-
-     
+    
     };
 
-    $scope.grocerylist = [];
 
+    $scope.grocerylist = [];
+    $scope.randomize = function()
+    {
+      $scope.grocerylist = [];
+    for (i = 0; $scope.grocerylist.length < 5;i++)
+     {
+      $scope.addtolist(Math.floor(Math.random()*$scope.recipes.length));
+     }
+
+    }
     $scope.addtolist = function(index) {
+      console.log(index);
       var i;
       var shouldadd = 1;
       for (i = 0; i < $scope.grocerylist.length; i++)
