@@ -9,6 +9,12 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("/ ")
+      }
+    </script>
 
 <h1>Create a Grocery List</h1>
 <div ng-controller="RecipesController">
@@ -29,7 +35,8 @@
     <tr ng-repeat="recipe in recipes | filter: query">
     <td>{{recipe.name}}</td>
     <td>{{recipe.mealtype}}</td>
-    <td><button class = "btn btn-success" ng-click="addtolist($index)"> Add </button></td>
+    <td><button class = "btn btn-success btn-sm" ng-click="addtolist(recipe._id)"> Add </button></td>
+    <td><button class = "btn btn-danger btn-sm" ng-click="removelist(recipe._id)"> Del </button></td>
     </tr>
 </table>
 </div>
@@ -64,11 +71,7 @@
         </div>
 
 </div>
-
-
 </div>
-
-
 </div>
 </div>
 </div>     

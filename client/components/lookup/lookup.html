@@ -9,6 +9,12 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("/ ")
+      }
+    </script>
 
 <div ng-controller="RecipesController">
 <h1>Recipe Book</h1>
@@ -17,17 +23,18 @@
     <div class="form-row" id = "refine">
      <div class="col">
      <select class="form-control" ng-model = "mealchoice">
-      <option value="" selected disabled>Meal Type</option>
+      <option value="" >Meal Type</option>
        <option>Breakfast</option>
        <option>Lunch</option>
        <option>Dinner</option>
        <option>Dessert</option>
        <option>Other</option>
+
      </select>
      </div>
      <div class="col">
      <select class="form-control" ng-model = "itemchoice">
-      <option value="" selected disabled>Core Item</option>
+      <option value="" >Core Item</option>
        <option>Chicken</option>
        <option>Beef</option>
        <option>Seafood</option>

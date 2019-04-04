@@ -32,9 +32,17 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       $scope.cquants.push({'id':'cquant'+newItemNo});
       $scope.cmtypes.push({'id':'cmtype'+newItemNo});
     };
+    $scope.removeChoice = function() {
+      $scope.choices.pop();
+      $scope.cquants.pop();
+      $scope.cmtypes.pop();
+    };
     $scope.addNewStep = function() {
       var newItemNo = $scope.chsteps.length+1;
       $scope.chsteps.push({'id':'chstep'+newItemNo});
+    };
+    $scope.removeStep = function() {
+      $scope.chsteps.pop();
     };
 
     // $scope.showAddChoice = function(choice) {

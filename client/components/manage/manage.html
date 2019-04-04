@@ -9,10 +9,16 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("/ ")
+      }
+    </script>
 
 <div ng-controller="RecipesController">
   <h1>Manage Cookbook</h1>
-<button class="btn btn-success btn-lg btn-block" id="cooking-button" onclick="gotopage2()">Add Recipe</button>
+<button class="btn btn-success btn-lg btn-block" id="cooking-button" onclick="gotopage2()">Create Recipe</button>
 <script>
   function gotopage2() {
     location.replace("addrec")

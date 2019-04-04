@@ -9,14 +9,17 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("manage")
+      }
+    </script>
 
 <div ng-controller="RecipesController">
 <h1>Create Recipe</h1>
 <button type = "button" class = "btn btn-primary" id="submit-button" ng-click="addRecipe()">Submit Recipe</button>
 
-
-
-     
     <form class = "form">
     <div class="form-row">
      <div class="col">
@@ -53,7 +56,8 @@
             <div class="form-group" ng-repeat="choice in choices">
               <label for="choice" ng-show="$first"></label>
               <input type="text" class="form-control" ng-model="choice.name" name="" placeholder="Ingredient Name">
-              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewChoice()">Add another Ingredient</button>
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewChoice()">Add Ingredient</button>
+              <button type = "button" class = "btn btn-danger" id = "rem-button" ng-show="$last" ng-click="removeChoice()">Remove Ingredient</button>
             </div>
           </div>
      </div>
@@ -92,7 +96,8 @@
             <div class="form-group" ng-repeat="chstep in chsteps">
               <label for="chstep" ng-show="$first"></label>
               <input type="text" class="form-control" ng-model="chstep.name" name="" placeholder="Instruction.. "> 
-              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewStep()">Add another Step</button>
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewStep()">Add Step</button>
+              <button type = "button" class = "btn btn-danger" id = "rem-button" ng-show="$last" ng-click="removeStep()">Remove Step</button>
             </div>
           </div>
      </div>

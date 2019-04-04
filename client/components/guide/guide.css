@@ -6,6 +6,14 @@
     
   }
 
+#back-button
+{
+  margin-top: 5px;
+  margin-left:5px;
+  background-color: rgb(54, 135, 233, 0.7);
+  border: none;
+}
+
   .selecttocook
   {
     max-height: 450px;
@@ -19,7 +27,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 30%;
-    margin-top: 45px;
+    margin-top: 15px;
     color: crimson;
     font-size:  4vw;
     font-family: verdana, bold;

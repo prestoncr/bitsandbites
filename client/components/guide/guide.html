@@ -9,7 +9,15 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("/ ")
+      }
+    </script>
+
   <h1>Cooking Guide</h1>
+  
 <div class= row ng-controller="RecipesController">
 
 
@@ -21,7 +29,7 @@
   <div class="selecttocook">
     <table class="table table-striped table-hover">
         <th>Recipe</th>
-      <tr ng-repeat="recipe in recipes | filter: query" ng-click="concatsteps($index)">
+      <tr ng-repeat="recipe in recipes | filter: query" ng-click="concatsteps(recipe._id)">
         <td align= "left">{{recipe.name}}</td>            
       </tr>
     </table>
@@ -32,9 +40,9 @@
 <div class="col-md-4">
   <div class="jumbotron jumbotron-instruct">
     <h2>{{detailedInfo.name}}</h2>
-    <p3>Ingredients</p3>
+    <p3>{{displayword1}}</p3>
     <pre id = "ipre">{{alling}}</pre>
-    <p3>Instructions</p3>
+    <p3>{{displayword2}}</p3>
     <pre>{{allsteps}}</pre>
 
 </div>

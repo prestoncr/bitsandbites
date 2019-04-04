@@ -9,6 +9,12 @@
 
 <div class="container">
 <div class="overlay">
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("manage")
+      }
+    </script>
 
 <div ng-controller="RecipesController">
 <h1>Delete Recipe</h1>
