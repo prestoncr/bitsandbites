@@ -10,6 +10,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.selectedID = undefined;
     $scope.alling = undefined;
     $scope.allsteps = undefined;
+    $scope.stepnum = undefined;
     $scope.displayword1 = "";    
     $scope.displayword2 = "";    
    
@@ -32,6 +33,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       $scope.detailedInfo = $scope.recipes[index];
       $scope.alling = "";
       $scope.allsteps = "";
+
       var i;
       for (i = 0; i < $scope.detailedInfo.ingredients.length; i++)
       {
@@ -50,8 +52,9 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       //this way user doesnt have to number steps when inputting recipe
       for (i = 0; i < $scope.detailedInfo.steps.length; i++)
       {
+        $scope.allsteps += "Step " + (i+1) + ". ";
         $scope.allsteps += $scope.detailedInfo.steps[i];
-        $scope.allsteps += "\n";
+        $scope.allsteps += "\n\n\n";
       }
     
     };

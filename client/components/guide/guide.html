@@ -3,12 +3,14 @@
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="components/guide/guide.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
 </head>
 
 <body ng-app="bitsandbites">
 
 <div class="container">
 <div class="overlay">
+    <nav class="navbar navbar-custom">  
     <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
     <script>
       function gotopage() {
@@ -17,18 +19,20 @@
     </script>
 
   <h1>Cooking Guide</h1>
+</nav>
   
 <div class= row ng-controller="RecipesController">
 
 
-<div class="col-md-4">
+
+<div class="col-md-3" id = "leftcontent">
   <div class="input-group" id="searchBar">
-    <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
-    <input type="text" class="form-control" ng-model="query" placeholder="Search Recipes..">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+    <input type="text" style = "background-color: #efe5d46f"class="form-control" ng-model="query"  placeholder="Search..">
   </div>
   <div class="selecttocook">
-    <table class="table table-striped table-hover">
-        <th>Recipe</th>
+    <table class="table table-hover">
+        <th>Recipes</th>
       <tr ng-repeat="recipe in recipes | filter: query" ng-click="concatsteps(recipe._id)">
         <td align= "left">{{recipe.name}}</td>            
       </tr>
@@ -36,22 +40,45 @@
   </div>
 </div>
 
+<div class = col>
 
-<div class="col-md-4">
-  <div class="jumbotron jumbotron-instruct">
-    <h2>{{detailedInfo.name}}</h2>
-    <p3>{{displayword1}}</p3>
-    <pre id = "ipre">{{alling}}</pre>
-    <p3>{{displayword2}}</p3>
-    <pre>{{allsteps}}</pre>
+<div class = "row">
+      <div class="jumbotron jumbotron-name">
+       <p2>{{detailedInfo.name}}</p2></br>
+      </div>
+
+      <div class = "row">
+      <div class = col> 
+      <div class="jumbotron jumbotron-ing">
+       <p3>{{displayword1}}</p3>
+       <pre id = "ipre">{{alling}}</pre>
+      </div>
+      </div>
+
+       <div class = col> 
+        <div class="jumbotron jumbotron-instruct">
+       <p3>{{displayword2}}</p3>
+       <pre>{{allsteps}}</pre>
+       </div>
+       </div>
+      </div>
+</div>
 
 </div>
+
+
+
+
+
+
 </div>
+
+
 
   
 </div>
 </div>
-</div>     
+   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>

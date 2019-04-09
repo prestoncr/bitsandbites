@@ -1,12 +1,21 @@
+.navbar-custom
+{
+ background-color: rgb(166,59,63);
+ margin-bottom: 30px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
 .overlay {
   opacity: 1;
   position: absolute;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../source/board-bunch-cooking-349609.jpg) repeat; background-size: cover;
-  background-size: cover;
+  background-color:#efe5d46f;
 }
 
 div
@@ -15,16 +24,13 @@ div
   font-family: verdana;
   font-size: 16px;
 }
-
 h1{
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  margin-top: 75px;
-  color: crimson;
+
+  margin-top: 15px;
+  color: white;
   font-size:  4vw;
-  font-family: verdana, bold;
-}
+   font-family: 'Playfair Display', serif;
+ }
 #bandb
 {
     height: 45%;
@@ -33,15 +39,49 @@ h1{
     margin-left: 350px;
     margin-bottom: 20px;
 }
-#cooking-button
+
+#wow
+{
+  background: url(../../source/nobackground.png);
+  background-position:center;
+
+}
+#tile
+{
+  width: 200px;
+  height: 200px;
+  margin: 10px;
+  font-size: 2vw;
+  color:  3px dashed rgb(32,49,83);
+  font-family: 'Chivo', sans-serif;
+  background: white;
+  border: 3px dashed rgb(32,49,83);
+  white-space: initial;
+}
+
+#content
+{
+  width: 40%;
+  margin-left:auto;
+  margin-right: auto;
+}
+/* #cooking-button
 {
 margin-left: auto;
 margin-right: auto;
-width: 70%;
+height: 50%;
+width: 50%;
 margin-top: 20px;
 }
 
 #grocery-button
+{
+margin-left: auto;
+margin-right: auto;
+width: 70%;
+margin-top: 45px;
+}
+#manage-button
 {
 margin-left: auto;
 margin-right: auto;
@@ -55,5 +95,4 @@ margin-right: auto;
 width: 70%;
 margin-top: 45px;
 color: white;
-
-}
+} */
