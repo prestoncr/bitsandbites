@@ -16,6 +16,9 @@
   width: 100%;
   height: 100%;
   background-color:#efe5d46f;
+  /* background-image:  */
+  background-image: url(../../source/nobackground.png);
+  background-size: 100%;
 }
 
 div
@@ -40,31 +43,32 @@ h1{
     margin-bottom: 20px;
 }
 
-#wow
-{
-  background: url(../../source/nobackground.png);
-  background-position:center;
 
-}
 #tile
 {
-  width: 200px;
+  width: 220px;
   height: 200px;
-  margin: 10px;
-  font-size: 2vw;
-  color:  3px dashed rgb(32,49,83);
+  margin: 20px;
+  font-size: 2.5vw;
+  /* margin: 20pt; */
+  color: rgb(22, 57, 128); 
   font-family: 'Chivo', sans-serif;
+  font-weight: bold;
   background: white;
-  border: 3px dashed rgb(32,49,83);
+  border: 5px dashed rgb(22, 57, 128); 
   white-space: initial;
+
 }
 
 #content
 {
-  width: 40%;
+  width: 55%;
   margin-left:auto;
   margin-right: auto;
+ 
 }
+
+
 /* #cooking-button
 {
 margin-left: auto;

@@ -13,6 +13,9 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.stepnum = undefined;
     $scope.displayword1 = "";    
     $scope.displayword2 = "";    
+
+
+ 
    
     $scope.showDetails = function(index, id) {
       $scope.detailedInfo = $scope.recipes[index];

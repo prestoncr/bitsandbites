@@ -33,6 +33,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         {shouldadd = 0;}
       }
        if (shouldadd)$scope.grocerylist.push($scope.recipes[index]);
+       $scope.displayIng();
       };
 
       $scope.removelist = function(id) {
@@ -52,6 +53,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
          }
        
          if(shouldRem)$scope.grocerylist.splice(rindex,1);
+         $scope.displayIng();
         };
 
       $scope.displayIng = function() {

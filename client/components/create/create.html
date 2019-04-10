@@ -2,13 +2,15 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="/components/create/create.css">
+  <link rel="stylesheet" href="components/create/create.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
 </head>
 
 <body ng-app="bitsandbites">
 
 <div class="container">
 <div class="overlay">
+    <nav class="navbar navbar-custom">  
     <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
     <script>
       function gotopage() {
@@ -16,65 +18,75 @@
       }
     </script>
 
-<h1>Create a Grocery List</h1>
-<div ng-controller="RecipesController">
-<button class = "btn btn-danger" id = "rando" ng-click=randomize()> Decide for Me </button>
-<div class = "row">
-<div class="col-md-6">
- <div class="input-group" id="searchBar">
-  <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
-   <input type="text" class="form-control" ng-model="query" placeholder="Search..">
+  <h1>Grocery List Maker</h1>
+</nav>
+  
+<div class= row ng-controller="RecipesController">
+
+
+<div class="col-md-5" id = "leftcontent">
+  <div class="input-group" id="searchBar">
+     <span class="input-group-addon" id="sizing-addon1"><span class="glyphicon glyphicon-search"></span></span>
+   <input type="text" style = "background-color: #efe5d46f" class="form-control" ng-model="query" placeholder="Search..">
+   <button class = "btn btn-danger" id = "rando" ng-click=randomize()> Decide for Me </button>
    </div>
-   <div class="tableWrapper">
-   <table class="table table-striped table-hover">
+   <div class="selectforlist">
+   <table class="table table-hover">
     <tr>
      <th>Recipe</th>
      <th>Meal Type</th>
-      <th></th>
+     <th></th>
+     <th></th>
       </tr>
     <tr ng-repeat="recipe in recipes | filter: query">
     <td>{{recipe.name}}</td>
     <td>{{recipe.mealtype}}</td>
-    <td><button class = "btn btn-success btn-sm" ng-click="addtolist(recipe._id)"> Add </button></td>
-    <td><button class = "btn btn-danger btn-sm" ng-click="removelist(recipe._id)"> Del </button></td>
+    <td><button class = "btn btn-success btn-sm" id = "smb" ng-click="addtolist(recipe._id)"> Add </button></td>
+    <td><button class = "btn btn-danger btn-sm" id = "smb" ng-click="removelist(recipe._id)"> Del </button></td>
     </tr>
 </table>
 </div>
 </div>
 
-<div class="col-md-4">
-    <div class="jumbotron jumbotron-groc">
-        <h2>Current List</h2>
-        <ul>
+<div class = col>
+
+      <div class = "row">
+      <div class = col> 
+      <div class="jumbotron jumbotron-list">
+      <p3>----------- Basket -----------</p3>
+      <ul>
           <li class="animate-repeat" ng-repeat = "recipe in grocerylist">
-          <span style = "color:forestgreen" class="glyphicon glyphicon-ok"></span><p3>{{recipe.name}}</p3>
+          <p2>{{recipe.name}}</p2>
           </li>
-          <button class = "btn btn-primary" id = "printlist" ng-click="displayIng()">Print List</button>
         </ul>
-        </div>
+      </div>
+      </div>
 
-<h3>Ingredients</h3>
-      <div class="inglist">
-          <table class="table table-striped table-hover">
-            <tr>
-              <th>Ingredient</th>
-              <th>Quantity</th>
-              <th>Measurement</th>
-              <th></th>
-            </tr>
-            <tr ng-repeat="ingredients in ingredients">
-              <td>{{ingredients.x}}</td>
-              <td>{{ingredients.y}}</td>
-              <td>{{ingredients.z}}</td>
-            </tr>
-          </table>
-        </div>
+       <div class = col> 
+        <div class="jumbotron jumbotron-ing">
+       <p3> ------ Ingredients List ------</p3>
+       <table class="table table-hover">
+          <tr ng-repeat="ingredients in ingredients">
+            <td>{{ingredients.x}}</td>
+            <td>{{ingredients.y}}</td>
+            <td>{{ingredients.z}}</td>
+          </tr>
+        </table>
+
+       </div>
+       </div>
+      </div>
+</div>
+
+</div>
+
+
 
 </div>
 </div>
 </div>
-</div>
-</div>     
+
+   
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
@@ -83,3 +95,4 @@
   <script src="/components/create/createController.js"></script>
 </body>
 </html>
+
