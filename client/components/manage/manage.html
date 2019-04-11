@@ -2,6 +2,146 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/manage/manage.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+  <nav class="navbar navbar-custom">  
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() {
+      location.replace("/ ")
+      }
+    </script>
+
+  <h1>Manage Recipes</h1>
+</nav>
+
+
+<div class = col id = content>
+
+<div class= row>
+<div class = col>
+  <button class="btn" id="tile" onclick="gotopage1()">Create Recipe</button>
+    <script>
+      function gotopage1() { location.replace("addrec") }
+    </script>
+</div> 
+<div class = col>
+  <button class="btn" id="tile" onclick="gotopage2()">Delete Recipe</button>
+   <script> 
+    function gotopage2() { location.replace("delrec") }
+  </script>
+</div>
+</div>
+
+<!-- <div class= row>
+<div class = col>
+  <button class="btn" id="tile" onclick="gotopage3()">View Cookbook</button>
+    <script>
+      function gotopage3() { location.replace("lookup") }
+    </script>
+</div> 
+<div class = col>
+  <button class="btn" id="tile" onclick="gotopage4()">Manage Recipes</button>
+   <script> 
+    function gotopage4() { location.replace("manage") }
+  </script>
+</div>
+</div> -->
+  
+</div>
+
+
+
+</div>
+</div>     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="/components/guide/guideController.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="indexpage.css">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+
+<div ng-controller="RecipesController">
+  <img src="source/cooltext319038153449073.png" class="img-fluid" id = "bandb">
+
+<button class="btn btn-success" id="cooking-button" onclick="gotopage2()">Start Cooking</button>
+<script>
+  function gotopage2() {
+    location.replace("guide")
+  }
+  </script>
+
+<button class="btn btn-primary btn-lg btn-block" id="grocery-button" onclick="gotopage1()">Create A Grocery List</button>
+<script>
+  function gotopage1() {
+  location.replace("create")
+  }
+</script>
+
+<button class="btn btn-warning btn-lg btn-block" id="lookup-button" onclick="gotopage4()">View Cookbook</button>
+<script>
+  function gotopage4() {
+    location.replace("lookup")
+  }
+</script>
+
+<button class="btn btn-danger btn-lg btn-block" id="manage-button" onclick="gotopage3()">Manage Recipes</button>
+<script>
+  function gotopage3() {
+  location.replace("manage")
+  }
+</script>
+
+</div>
+</div>
+</div>     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+</body>
+</html> -->
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/components/manage/manage.css">
 </head>
 
@@ -44,4 +184,4 @@
   <script src="js/factories/recipeFactory.js"></script>
   <script src="components/manage/manageController.js"></script>
 </body>
-</html>
+</html> -->

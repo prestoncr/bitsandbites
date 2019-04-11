@@ -2,6 +2,121 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/lookup/lookup.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+    <nav class="navbar navbar-custom">  
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() { location.replace("/ ") }
+    </script>
+
+  <h1>Cook Book</h1>
+</nav>
+  
+<div ng-controller="RecipesController">
+<nav class="navbar navbar-custom2">  
+    <form class = "form">
+        <div class="form-row" id = "refine">
+         <div class="col" id = "categories">
+         <select class="form-control" ng-model = "mealchoice" id = "selectors">
+          <option value="" >Any Meal Type</option>
+           <option>Breakfast</option>
+           <option>Lunch</option>
+           <option>Dinner</option>
+           <option>Dessert</option>
+           <option>Other</option>
+    
+         </select>
+         </div>
+         <div class="col" id = "categories">
+         <select class="form-control" ng-model = "itemchoice" id = "selectors">
+          <option value="" >Any Core Item</option>
+           <option>Chicken</option>
+           <option>Beef</option>
+           <option>Seafood</option>
+           <option>Starch</option>
+           <option>Other</option>
+         </select>
+         </div>
+         <div class="col">
+            <button type = "button" class = "btn btn-custom" ng-click="getGroup()">Refine Selection</button>
+         </form>
+      
+</nav>
+
+<div class = row>
+
+<div class="col-md-4" id = "leftcontent">
+  <div class="input-group" id="searchBar">
+    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
+    <input type="text" style = "background-color: #efe5d46f"class="form-control" ng-model="query"  placeholder="Search..">
+  </div>
+  <div class="selectrec">
+    <table class="table table-hover">
+        <th>Recipes</th>
+        <tr ng-repeat="chosendata in chosendata | filter: query" ng-click="viewRec($index)">
+            <td align= "left">{{chosendata.name}}</td>            
+      </tr>
+    </table>
+  </div>
+</div>
+
+
+<div class = "col">
+
+<div class = "row">
+      <div class="jumbotron jumbotron-name">
+          <h2>{{detailedInfo.name}}</h2>
+      </div>     
+
+      <div class = "row">
+      <div class = "col"> 
+      <div class="jumbotron jumbotron-rec">
+          <p3>{{detailedInfo.coreitem}}</p3>
+          <p3>{{detailedInfo.mealtype}}</p3>
+          <br>
+          <p3>{{displayword1}}</p3>
+          <pre id = "alling">{{alling}}</pre>
+
+      </div>
+      </div>
+
+      </div>
+
+</div>
+
+</div>
+
+
+</div>
+  
+</div>
+</div>
+</div>
+   
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="/components/lookup/lookupController.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/components/lookup/lookup.css">
 </head>
 
@@ -93,4 +208,4 @@
   <script src="js/factories/recipeFactory.js"></script>
   <script src="components/lookup/lookupController.js"></script>
 </body>
-</html>
+</html> -->

@@ -1,59 +1,80 @@
-.overlay {
-    opacity: 1;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url(../../source/board-bunch-cooking-349609.jpg) repeat; background-size: cover;
-    background-size: cover;
-  }
-  #back-button
+.navbar-custom
+{
+ background-color: rgb(166,59,63);
+}
+#back-button
 {
   margin-top: 5px;
   margin-left:5px;
-  background-color: rgb(54, 135, 233, 0.7);
-  border: none;
+  background-color: transparent;
+  border-color: white;
+  border-width: 1px;
+  font-size: 20px;
 }
- 
-  h1{
- 
-    margin-left: 400px;
-    width: 40%;
-    margin-top: 100px;
-    color: crimson;
-    font-size:  4vw;
-    font-family: verdana, bold;
-  }
-  #bandb
-  {
-      width: 550px;
-      height: 120px;
-      margin-left: 365px;
-      margin-top: 85px;   
-  }
-  #cooking-button
-  {
+.overlay {
+  opacity: 1;
+  position: absolute;
+  overflow-x: hidden; 
+  overflow-y: hidden; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color:#efe5d46f;
+  /* background-image:  */
+  background-image: url(../../source/nobackground.png);
+  background-size: 100%;
+}
+
+div
+{
+  color: navy;
+  font-family: verdana;
+  font-size: 16px;
+}
+h1{
   margin-left: auto;
   margin-right: auto;
-  width: 60%;
-  margin-top: 20px;
-  }
-  
-  #grocery-button
-  {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-  margin-top: 45px;
-  }
-  #lookup-button
-  {
-  margin-left: auto;
-  margin-right: auto;
-  width: 70%;
-  margin-top: 45px;
+  width: 30%;
+  margin-top: 15px;
+  /* color: #FAE6C7; */
   color: white;
-  
-  }
-  
+  font-size:  4vw;
+   font-family: 'Playfair Display', serif;
+ }
+#bandb
+{
+    height: 45%;
+    width: 45%;
+    margin-top: 75px;
+    margin-left: 350px;
+    margin-bottom: 20px;
+}
+
+
+#tile
+{
+  width: 220px;
+  height: 200px;
+  margin: 20px;
+  font-size: 2.5vw;
+  /* margin: 20pt; */
+  color: rgb(22, 57, 128); 
+  font-family: 'Chivo', sans-serif;
+  font-weight: bold;
+  background: white;
+  border: 5px dashed rgb(22, 57, 128); 
+  white-space: initial;
+
+}
+
+#content
+{
+  width: 55%;
+  margin-top: 60px;
+  margin-left:auto;
+  margin-right: auto;
+ 
+}
+
+
