@@ -2,6 +2,161 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/addrec/addrec.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+    <nav class="navbar navbar-custom">  
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() { location.replace("manage") }
+    </script>
+
+  <h1>Create Recipe</h1>
+</nav>
+  
+<div class= row ng-controller="RecipesController">
+
+
+<div class="col" id = "leftcontent">
+
+  <form class = "form">
+    <div class="form-col">
+     <div class="row" id = "irow">
+     <input type="text" class="form-control" style = "font-weight: bold;"placeholder="Recipe Name" ng-model="newRecipe.name" />
+     </div>
+     <div class="row" id = "irow">
+            <select class="form-control" id="selmealtype" ng-model = "newRecipe.mealtype">
+             <option value="" selected disabled>Meal Type</option>
+              <option>Breakfast</option>
+              <option>Lunch</option>
+              <option>Dinner</option>
+              <option>Dessert</option>
+              <option>Other</option>
+            </select>
+     </div>
+     <div class="row" id = "irow">
+        <select class="form-control" id="selcoretype" ng-model = "newRecipe.coreitem">
+            <option value="" selected disabled>Core Item</option>
+             <option>Chicken</option>
+             <option>Beef</option>
+             <option>Seafood</option>
+             <option>Starch</option>
+             <option>Other</option>
+           </select>
+     </div>
+     <div class="row" id = "imessage">
+        <p2> {{displayword1}}</p2> 
+      </div>
+     <div class="row" id = "isubmit">
+        <button type = "button" class = "btn btn-primary" id="submit-button" ng-click="addRecipe()">Submit Recipe</button>
+      </div>
+      <div class="row" id = "irefresh">
+          <button type="button" class = "btn btn-danger" id="submit-button" onclick="gotopage2()">Start New Recipe</button>
+    <script>
+      function gotopage2() { location.reload()}
+    </script>
+        </div>
+     </div>
+     </form>
+
+     
+</div>
+
+<div class = col>
+
+  <div class = "jumbotron jumbotron-ing"> 
+  <form class = "form">
+    <div class="form-row">
+     <div class="col">
+        <div class="ingnameclass">
+            <div class="form-group" ng-repeat="choice in choices">
+              <label for="choice" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="choice.name" name="" placeholder="Ingredient Name">
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewChoice()">Add Ingredient</button>
+              <button type = "button" class = "btn btn-danger" id = "rem-button" ng-show="$last" ng-click="removeChoice()">Remove Ingredient</button>
+            </div>
+          </div>
+     </div>
+     <div class="col">
+        <div class="cquantclass">
+            <div class="form-group" ng-repeat="cquant in cquants">
+              <label for="cquant" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="cquant.name" name="" id = "quant" placeholder="Quantity">
+            </div>
+          </div>
+     </div>
+     <div class="col">        
+      <div class="cmtypeclass">
+            <div class="form-group" ng-repeat="cmtype in cmtypes">
+              <label for="cmtype" ng-show="$first"></label>
+              <select class="form-control" id="selmealtype" ng-model = "cmtype.name" name = "">
+                  <option value="" selected disabled>Measurement Type</option>
+                   <option>Pound(s)</option>
+                   <option>Ounce(s)</option>
+                   <option>Cup(s)</option>
+                   <option>Tsp(s)</option>
+                   <option>Tbsp(s)</option>
+                   <option>Package(s)</option>
+                   <option>Unit(s)</option>
+                 </select>
+            </div>
+          </div>
+     </div>
+     </div>
+     </form>
+  </div>
+
+
+  <div class = "jumbotron jumbotron-ing"> 
+     <form class = "form">
+    <div class="form-row">
+     <div class="col">
+        <div class="stepsinput">
+            <div class="form-group" ng-repeat="chstep in chsteps">
+              <label for="chstep" ng-show="$first"></label>
+              <input type="text" class="form-control" ng-model="chstep.name" name="" placeholder="Instruction.. "> 
+              <button type = "button" class = "btn btn-primary" id = "add-button" ng-show="$last" ng-click="addNewStep()">Add Step</button>
+              <button type = "button" class = "btn btn-danger" id = "rem-button" ng-show="$last" ng-click="removeStep()">Remove Step</button>
+            </div>
+          </div>
+     </div>
+    </form>
+     
+
+    </div>
+</div>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+
+   
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="/components/addrec/addrecController.js"></script>
+</body>
+</html>
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="/components/addrec/addrec.css">
 </head>
 
@@ -115,4 +270,4 @@
   <script src="js/factories/recipeFactory.js"></script>
   <script src="/components/addrec/addrecController.js"></script>
 </body>
-</html>
+</html> -->
