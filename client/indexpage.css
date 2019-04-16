@@ -62,41 +62,9 @@ h1{
 
 #content
 {
-  width: 55%;
+  margin-top:7%;
+  width: 75%;
   margin-left:auto;
   margin-right: auto;
  
 }
-
-
-/* #cooking-button
-{
-margin-left: auto;
-margin-right: auto;
-height: 50%;
-width: 50%;
-margin-top: 20px;
-}
-
-#grocery-button
-{
-margin-left: auto;
-margin-right: auto;
-width: 70%;
-margin-top: 45px;
-}
-#manage-button
-{
-margin-left: auto;
-margin-right: auto;
-width: 70%;
-margin-top: 45px;
-}
-#lookup-button
-{
-margin-left: auto;
-margin-right: auto;
-width: 70%;
-margin-top: 45px;
-color: white;
-} */

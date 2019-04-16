@@ -84,6 +84,23 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
        sessionStorage.setItem('menukey', $scope.menu);
     };
 
+    $scope.removemenu = function(name) {
+
+        var shouldRem = false;
+         for (i = 0; i < $scope.menu.length; i++)
+         {
+           if ($scope.menu[i] == name)
+           {
+             shouldRem = true;rindex = i;
+           }
+         }
+       
+         if(shouldRem)$scope.menu.splice(rindex,1);
+         sessionStorage.setItem('menukey', $scope.menu);
+         $scope.displayIng();
+     
+    };
+
     
       
   }
