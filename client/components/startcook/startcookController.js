@@ -2,6 +2,44 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
   function($scope, Recipes) {
     Recipes.getAll().then(function(response) {
       $scope.recipes = response.data;
+
+
+      $scope.menus = [];   
+      var tempdata = sessionStorage.getItem('menukey');
+      var splind;
+      var strlist = [];
+      while (tempdata.length > 1)
+      {
+        if (tempdata.includes(',')) 
+        {
+          splind = tempdata.indexOf(',');
+          strlist.push(tempdata.slice(0,splind));
+          tempdata = tempdata.slice(splind+1);
+        }
+  
+        else 
+        {
+          strlist.push(tempdata);
+          tempdata="";
+        }
+  
+      }
+        for (i = 0; i < $scope.recipes.length; i++)
+           {
+          for (j = 0; j < strlist.length; j++)
+            {
+            if ($scope.recipes[i].name == strlist[j])
+                $scope.menus.push($scope.recipes[i]);
+            }  
+           }
+
+
+
+
+
+
+
+
     }, function(error) {
       console.log('Unable to retrieve recipes:', error);
     });
@@ -11,14 +49,49 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.alling = undefined;
     $scope.allsteps = undefined;
     $scope.stepnum = undefined;
-    $scope.displayword1 = "";
-    $scope.displayword2 = "";   
     $scope.menu = [];
-    sessionStorage.setItem('menukey', $scope.menu);
+    $scope.displayword1 = "";
+    $scope.displayword2 = "";
+    // $scope.menus = [];   
+    // var tempdata = sessionStorage.getItem('menukey');
+    // var splind;
+    // var strlist = [];
+    // while (tempdata.length > 1)
+    // {
+    //   if (tempdata.includes(',')) 
+    //   {
+    //     splind = tempdata.indexOf(',');
+    //     strlist.push(tempdata.slice(0,splind));
+    //     tempdata = tempdata.slice(splind+1);
+    //   }
+
+    //   else 
+    //   {
+    //     strlist.push(tempdata);
+    //     tempdata="";
+    //   }
+
+    // }
+    //   for (i = 0; i < $scope.recipes.length; i++)
+    //      {
+    //     for (j = 0; j < strlist.length; j++)
+    //       {
+    //       if ($scope.recipes[i].name == strlist[j])
+    //           $scope.menus.push($scope.recipes[i]);
+    //       }  
+    //      }
+  
     
-    // $scope.getNewCont = function() {
-    //   $scope.displayword1 = sessionStorage.getItem('onekey');
-    // };
+    $scope.getNewCont = function() {
+      $scope.displayword1 = "";
+      $scope.menu = sessionStorage.getItem('menukey');
+
+      for (i = 0; i < $scope.menu.length; i++)
+      {
+        $scope.displayword1 += $scope.menu[i];
+      }
+      
+    };
   
    
     $scope.showDetails = function(index, id) {
@@ -63,42 +136,9 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
         $scope.allsteps += $scope.detailedInfo.steps[i];
         $scope.allsteps += "\n\n\n";
       }
-      
+      sessionStorage.setItem('onekey', $scope.detailedInfo.name);
     };
-
-    $scope.addtomenu = function(id) {
-      var i;
-      var index = 0;
-      for (i = 0; i < $scope.recipes.length;i++)
-       {
-         if ($scope.recipes[i]._id == id)
-         {index = i; break;}
-       }
-       var shouldadd = true;
-       for (i = 0; i < $scope.menu.length; i++)
-        {
-          if ($scope.recipes[index].name == $scope.menu[i]) shouldadd = false;
-        }
-
-       if(shouldadd)  $scope.menu.push($scope.recipes[index].name);
-       sessionStorage.setItem('menukey', $scope.menu);
-    };
-
-    
       
   }
 ]);
 
-// $('#btnClick').on('click',function(){
-    
-  
-//       if($('#content1').css('display')!='none')
-//       {
-
-//       $('#content2').html($('#content2').html()).show().siblings('div').hide();
-          
-//       }
-//       else if($('#content2').css('display')!='none'){
-//           $('#content1').show().siblings('div').hide();
-//       }
-//   });

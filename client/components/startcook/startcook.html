@@ -2,7 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="components/guide/guide.css">
+  <link rel="stylesheet" href="components/startcook/startcook.css">
   <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
 </head>
 
@@ -13,37 +13,37 @@
 
 
 
-<div class="overlay" id = "content1">
+<div class="overlay"">
     <nav class="navbar navbar-custom">  
     <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
-    <script> function gotopage() { location.replace("/ ")}
+    <script> function gotopage() { location.replace("guide") }
     </script>
 
-  <h1>Cook Book</h1>
- 
-
+  <h1>Cooking Guide</h1>
 </nav>
   
-<div class= row ng-controller="RecipesController">
+<div ng-controller="RecipesController">
+
+      
 
 
+    <nav class="navbar navbar-custom2">  
+       
 
-<div class="col-md-3" id = "leftcontent">
-  <div class="input-group" id="searchBar">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span></span>
-    <input type="text" style = "background-color: #efe5d46f"class="form-control" ng-model="query"  placeholder="Search..">
-  </div>
-  <div class="selecttocook">
-    <table class="table table-hover">
-        <th>Recipes</th>
-        <th></th>
-      <tr ng-repeat="recipe in recipes | filter: query" ng-click="concatsteps(recipe._id)">
-        <td align= "left">{{recipe.name}}</td>      
-        <td><button class = "btn btn-sm"  id = "plusbut" ng-click="addtomenu(recipe._id)"> + </button></td>   
-      </tr>
-    </table>
-  </div>
-</div>
+        <!-- <table class="table table-hover">
+          <th ng-repeat="menu in menus" ng-click="concatsteps(menu._id)">
+            <td>{{menu.name}}</td>            
+          </th>
+        </table> -->
+        
+        <ul ng-repeat="menu in menus" ng-click="concatsteps(menu._id)">
+            <li>{{menu.name}}</li>
+        </ul>
+
+
+          
+    </nav>
+
 
 <div class = col>
 
@@ -69,21 +69,6 @@
       </div>
 </div>
 
-</div>
-
-<div class = col>
-  <div class="jumbotron jumbotron-list">
-    <p3>---------Menu---------</p3>
-    <table class="table table-hover">
-        <tr ng-repeat="menu in menu">
-          <td>{{menu}}</td>
-        </tr>
-      
-      </table>
-      <button class = "btn btn-md" id = "startbut" onclick="gotopage3()">Start Cooking</button>
-      <script> function gotopage3() { location.replace("startcook")}
-        </script>
-    </div>
 </div>
 
 
@@ -125,6 +110,6 @@
   <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
   <script src="js/app.js"></script>
   <script src="js/factories/recipeFactory.js"></script>
-  <script src="/components/guide/guideController.js"></script>
+  <script src="/components/startcook/startcookController.js"></script>
 </body>
 </html>

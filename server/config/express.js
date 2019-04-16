@@ -36,6 +36,10 @@ app.get('/guide', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/components/guide/guide.html'));
      });
 
+app.get('/startcook', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/components/startcook/startcook.html'));
+     });
+
 app.get('/addrec', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/components/addrec/addrec.html'));
      });
