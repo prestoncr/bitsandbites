@@ -43,6 +43,10 @@ app.get('/startcook', function (req, res) {
 app.get('/addrec', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/components/addrec/addrec.html'));
      });
+
+app.get('/imprec', function (req, res) {
+    res.sendFile(path.join(__dirname + '../../../client/components/imprec/imprec.html'));
+     });
      
 app.get('/delrec', function (req, res) {
     res.sendFile(path.join(__dirname + '../../../client/components/delrec/delrec.html'));

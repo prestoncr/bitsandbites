@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="components/imprec/imprec.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+</head>
+
+<body ng-app="bitsandbites">
+
+<div class="container">
+<div class="overlay">
+  <nav class="navbar navbar-custom">  
+    <button class="btn btn-primary btn-sm" id="back-button" onclick="gotopage()"><</button>
+    <script>
+      function gotopage() { location.replace("/ ") }
+    </script>
+  <h1>Import Recipe</h1>
+</nav>
+
+<div ng-controller="RecipesController">
+
+<div class = "row" id = "content">
+
+<div class = "col">
+<div class = "jumbotron jumbotron-file">
+<form>
+ <input type="file" id="fileInput">
+  </form>
+  <button class = "btn btn-primary" ng-click="readFile()"> Click Me </button>
+</div>
+</div>
+
+<div class = "col">
+<div class = "jumbotron jumbotron-display">
+  <pre> {{displayword1}}</pre>
+</div>
+</div>
+
+</div>
+
+<script>
+
+var fileInput = document.getElementById('fileInput');
+var fileDisplayArea = document.getElementById('fileDisplayArea');
+
+fileInput.addEventListener('change', function(e) {
+    var file = fileInput.files[0];
+    var textType = /text.*/;
+    
+    if (file.type.match(textType)) {
+        var reader = new FileReader();
+        
+        reader.onload = function(e) {
+            var content = reader.result;
+            sessionStorage.setItem('filekey', content);
+        }
+        
+        reader.readAsText(file);	
+    } else {
+        fileDisplayArea.innerText = "File not supported!"
+    }
+});
+
+</script>
+
+
+
+
+
+
+
+
+
+
+</div>
+</div>
+</div>     
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://code.angularjs.org/1.4.3/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/factories/recipeFactory.js"></script>
+  <script src="/components/imprec/imprecController.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+

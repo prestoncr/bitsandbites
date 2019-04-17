@@ -1,3 +1,34 @@
+#content
+  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+.jumbotron-file
+{
+  height: 400px;
+  width: 400px;
+  margin: 50px;
+  padding: 30px;
+}
+
+.jumbotron-display
+{
+  height: 400px;
+  width: 400px;
+  margin: 50px;
+  padding: 30px;
+  overflow: auto;
+}
+#fileInput
+{
+  margin-bottom: 30px;
+}
+
+
+
 .navbar-custom
 {
  background-color: rgb(166,59,63);
@@ -21,9 +52,7 @@
   width: 100%;
   height: 100%;
   background-color:#efe5d46f;
-  /* background-image:  */
-  background-image: url(../../source/nobackground.png);
-  background-size: 100%;
+
 }
 
 div
@@ -42,14 +71,7 @@ h1{
   font-size:  4vw;
    font-family: 'Playfair Display', serif;
  }
-#bandb
-{
-    height: 45%;
-    width: 45%;
-    margin-top: 75px;
-    margin-left: 350px;
-    margin-bottom: 20px;
-}
+
 
 
 #tile
@@ -68,12 +90,5 @@ h1{
 
 }
 
-#content
-{
-  margin-top:7%;
-  width: 75%;
-  margin-left:auto;
-  margin-right: auto;
-}
 
 

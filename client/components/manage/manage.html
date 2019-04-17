@@ -24,37 +24,30 @@
 
 <div class = col id = content>
 
-<div class= row>
-<div class = col>
-  <button class="btn" id="tile" onclick="gotopage1()">Create Recipe</button>
-    <script>
-      function gotopage1() { location.replace("addrec") }
+  <div class= row>
+  <div class = col>
+    <button class="btn" id="tile" onclick="gotopage1()">Create Recipe</button>
+      <script>
+        function gotopage1() { location.replace("addrec") }
+      </script>
+  </div> 
+  <div class = col>
+    <button class="btn" id="tile" onclick="gotopage2()">Delete Recipe</button>
+     <script> 
+      function gotopage2() { location.replace("delrec") }
     </script>
-</div> 
-<div class = col>
-  <button class="btn" id="tile" onclick="gotopage2()">Delete Recipe</button>
-   <script> 
-    function gotopage2() { location.replace("delrec") }
-  </script>
-</div>
-</div>
-
-<!-- <div class= row>
-<div class = col>
-  <button class="btn" id="tile" onclick="gotopage3()">View Cookbook</button>
-    <script>
-      function gotopage3() { location.replace("lookup") }
-    </script>
-</div> 
-<div class = col>
-  <button class="btn" id="tile" onclick="gotopage4()">Manage Recipes</button>
-   <script> 
-    function gotopage4() { location.replace("manage") }
-  </script>
-</div>
-</div> -->
+  </div>
   
-</div>
+  <div class = col>
+      <button class="btn" id="tile" onclick="gotopage4()">Import Recipe</button>
+      <script> 
+       function gotopage4() { location.replace("imprec") }
+     </script>
+    </div>
+  </div>
+  
+   
+  </div>
 
 
 
