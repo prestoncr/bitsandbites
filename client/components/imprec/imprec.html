@@ -24,16 +24,47 @@
 
 <div class = "col">
 <div class = "jumbotron jumbotron-file">
+  <pre>
+This portion of the App is still in developement, due to this 
+some things may not work as expected.  A format is provided to
+the right to guide in the creation of the .txt file for recipe 
+import.  Everything needs to be  perfect, anything even slightly 
+off will ruin the recipe import.
+
+Updates coming soon.
+
+
+  </pre>
 <form>
  <input type="file" id="fileInput">
   </form>
   <button class = "btn btn-primary" ng-click="readFile()"> Click Me </button>
+  <pre> {{displayword1}}</pre>
 </div>
 </div>
 
 <div class = "col">
 <div class = "jumbotron jumbotron-display">
-  <pre> {{displayword1}}</pre>
+
+  <pre> 
+Here is an Example of the Recipe Format to follow: 
+each detail is important (including the colons, spaces,
+and newlines, etc..),  failure to adhere strictly to 
+this format will result in a failure to import the recipe.
+-----------------------------------------------------
+Name: Fried Chicken
+Meal Type: Dinner
+Core Item: Chicken
+ 
+Ingredients:
+Chicken breasts 3 pounds
+Flour 4 cups
+Seasoning 3 tsp
+    
+Steps:
+1) Cut Chicken into Strips
+2) Coat chicken with flour
+3) Fry until crispy</pre>
 </div>
 </div>
 

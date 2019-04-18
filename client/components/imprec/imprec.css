@@ -1,24 +1,22 @@
 #content
   {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
   }
-
 
 .jumbotron-file
 {
-  height: 400px;
-  width: 400px;
-  margin: 50px;
-  padding: 30px;
+  height: 500px;
+  width: 600px;
+  padding: 20px;
 }
 
 .jumbotron-display
 {
-  height: 400px;
-  width: 400px;
-  margin: 50px;
+  height: 500px;
+  width: 600px;
   padding: 30px;
   overflow: auto;
 }
