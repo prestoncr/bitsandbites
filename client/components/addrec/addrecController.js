@@ -47,6 +47,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     // };
     $scope.parseNum = function(num)
     {
+      if (num == undefined) return num;
       var index = num.indexOf('/');
       if (index == -1) return num;
       else 
