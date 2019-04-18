@@ -75,7 +75,6 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       {
         $scope.newRecipe.steps.push($scope.chsteps[j].name);
       }
-      console.log("wowowowoowow");
       var shouldCreate = true;
       if ($scope.choices.length == 1) {$scope.displayword1 = "Missing Ingredients!"; shouldCreate= false; }
       if ($scope.chsteps.length == 1) {$scope.displayword1 = "Missing Steps!"; shouldCreate= false; }
