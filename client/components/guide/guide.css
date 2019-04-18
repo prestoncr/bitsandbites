@@ -73,6 +73,8 @@ p3
   width: 670px;
   background: white;
   border: 3px dashed rgb(32,49,83);
+  justify-items: center;
+  display:flex;
   overflow:scroll;
 }
 .jumbotron-ing
