@@ -17,7 +17,7 @@
   height: 100%;
   background-color:#efe5d46f;
   /* background-image:  */
-  background-image: url(../../source/nobackground.png);
+  background-image: url(../../source/shadowback2.png);
   background-size: 100%;
 }
 
@@ -28,10 +28,9 @@ div
   font-size: 16px;
 }
 h1{
-
   margin-top: 15px;
   color: white;
-  font-size:  4vw;
+  font-size:  5vw;
    font-family: 'Playfair Display', serif;
  }
 #bandb
@@ -43,7 +42,6 @@ h1{
     margin-bottom: 20px;
 }
 
-
 #tile
 {
   width: 220px;
@@ -51,14 +49,26 @@ h1{
   margin: 20px;
   font-size: 2.5vw;
   /* margin: 20pt; */
-  color: rgb(22, 57, 128); 
+  /* color: rgb(22, 57, 128);  */
+  color:white;
   font-family: 'Chivo', sans-serif;
   font-weight: bold;
-  background: white;
-  border: 5px dashed rgb(22, 57, 128); 
+  /* background: white; */
+  background:rgb(46, 85, 164);
+  border:none;
+  border-radius: 20%;
+  /* border: 5px double rgb(22, 57, 128);  */
   white-space: initial;
-
+  box-shadow: 0 16px 32px 0 rgba(0,0,0,0.2), 0 12px 40px 0 rgba(0,0,0,0.19);
 }
+
+#tile:hover {
+  -ms-transform: scale(1.10,1.10);
+  -o-transform: scale(1.10,1.10);
+  transform: scale(1.10,1.10);
+}
+
+
 
 #content
 {

@@ -45,11 +45,25 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     // $scope.showAddChoice = function(choice) {
     //   return choice.id === $scope.choices[$scope.choices.length-1].id;
     // };
+    $scope.parseNum = function(num)
+    {
+      var index = num.indexOf('/');
+      if (index == -1) return num;
+      else 
+      {
+
+       var temp = eval(num);
+       temp = temp.toFixed(2);
+       return temp;
+      }
+
+    };
 
     $scope.addRecipe = function() {
       var obj;
       for (i = 0; i < $scope.choices.length; i++)
       {
+        $scope.cquants[i].name = $scope.parseNum($scope.cquants[i].name);
         obj = {
           "iname": $scope.choices[i].name,
           "quant": $scope.cquants[i].name,

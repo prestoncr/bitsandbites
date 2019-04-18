@@ -5,13 +5,13 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     }, function(error) {
       console.log('Unable to retrieve recipes:', error);
     });
-
+    $scope.selnum = 5;
      $scope.grocerylist = [];
     $scope.randomize = function()
     {
     var id;
     $scope.grocerylist = [];
-    for (i = 0; $scope.grocerylist.length < 5;i++)
+    for (i = 0; $scope.grocerylist.length < $scope.selnum;i++)
      {
       id = $scope.recipes[(Math.floor(Math.random()*$scope.recipes.length))]._id;
       $scope.addtolist(id)
@@ -56,6 +56,16 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
          $scope.displayIng();
         };
 
+        $scope.compareStrings = function (str1, str2)
+        {
+          if(str1[str1.length-1] == 's') str1 = str1.slice(0, str1.length-1);
+          if(str2[str2.length-1] == 's') str2 = str2.slice(0, str2.length-1);
+          str1 = str1.toUpperCase();
+          str2 = str2.toUpperCase();
+          if (str1 == str2) return true;
+          else return false;
+        };
+
       $scope.displayIng = function() {
         var i;
         var j;
@@ -71,8 +81,9 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
           {  
               for (z = 0; z <  $scope.ingredients.length;z++)
               {
-                if ($scope.grocerylist[i].ingredients[j].iname == 
-                    $scope.ingredients[z].x)
+             
+               if ($scope.compareStrings($scope.grocerylist[i].ingredients[j].iname,
+                                                        $scope.ingredients[z].x ))    
                     { 
                       exist = 1;
                       location = z;
@@ -86,6 +97,9 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
               location = 0;
              } 
              else {
+              $scope.grocerylist[i].ingredients[j].iname = 
+              $scope.grocerylist[i].ingredients[j].iname.charAt(0).toUpperCase()
+              + $scope.grocerylist[i].ingredients[j].iname.slice(1);
               obj = {
                 "x": $scope.grocerylist[i].ingredients[j].iname,
                 "y": $scope.grocerylist[i].ingredients[j].quant,

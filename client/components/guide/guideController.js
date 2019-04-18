@@ -15,7 +15,8 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
     $scope.displayword2 = "";   
     $scope.menu = [];
     sessionStorage.setItem('menukey', $scope.menu);
-    
+    startbut.enable = false;
+    $scope.isvis = false;
     // $scope.getNewCont = function() {
     //   $scope.displayword1 = sessionStorage.getItem('onekey');
     // };
@@ -82,6 +83,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
 
        if(shouldadd)  $scope.menu.push($scope.recipes[index].name);
        sessionStorage.setItem('menukey', $scope.menu);
+       $scope.isvis = true;
     };
 
     $scope.removemenu = function(name) {
@@ -97,8 +99,7 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
        
          if(shouldRem)$scope.menu.splice(rindex,1);
          sessionStorage.setItem('menukey', $scope.menu);
-         $scope.displayIng();
-     
+         if ($scope.menu.length == 0) $scope.isvis = false;
     };
 
     
