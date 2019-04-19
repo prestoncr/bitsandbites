@@ -6,6 +6,10 @@
  width: 475px;    
 
 }
+#mealhead
+{
+  width: 250px;
+}
 #centerme
 {
   justify-content: center;
