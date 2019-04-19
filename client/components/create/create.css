@@ -6,6 +6,11 @@
  width: 475px;    
 
 }
+#centerme
+{
+  justify-content: center;
+  display:flex;
+}
 #leftcontent 
 {
   border-right: 10px double #333;
@@ -37,10 +42,11 @@ th
 {
   border-bottom: 4px solid #333;
   font-size: 16pt;
+
 }
 td
 {
-max-width: 350px;
+max-width: 250px;
 overflow:auto;
 }
 

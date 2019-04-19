@@ -64,7 +64,9 @@
       <div class = "row">
       <div class = col> 
       <div class="jumbotron jumbotron-list">
-      <p3>----------- Basket -----------</p3>
+      <div id = "centerme">
+      <p3> Basket </p3>
+     </div>
       <ul>
           <li class="animate-repeat" ng-repeat = "recipe in grocerylist">
           <p2>{{recipe.name}}</p2>
@@ -75,7 +77,9 @@
 
        <div class = col> 
         <div class="jumbotron jumbotron-ing">
-       <p3> ------ Ingredients List ------</p3>
+        <div id = "centerme">
+       <p3> Ingredients List </p3>
+        </div>
        <table class="table table-hover">
           <tr ng-repeat="ingredients in ingredients">
             <td>{{ingredients.x}}</td>
