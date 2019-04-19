@@ -38,6 +38,12 @@ th
   border-bottom: 4px solid #333;
   font-size: 16pt;
 }
+td
+{
+max-width: 350px;
+overflow:auto;
+}
+
 .jumbotron-list
 { 
     margin-top: 10px;
