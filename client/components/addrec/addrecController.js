@@ -79,7 +79,8 @@ angular.module('recipes').controller('RecipesController', ['$scope', 'Recipes',
       var shouldCreate = true;
       if ($scope.choices.length == 1) {$scope.displayword1 = "Missing Ingredients!"; shouldCreate= false; }
       if ($scope.chsteps.length == 1) {$scope.displayword1 = "Missing Steps!"; shouldCreate= false; }
-
+      if ($scope.newRecipe.coreitem == "") $scope.displayword1 = "Missing Core Item!"; shouldCreate= false; }
+      if ($scope.newRecipe.mealtype == "") $scope.displayword1 = "Missing Meal Type!"; shouldCreate= false; }
       if(shouldCreate)
       {
       Recipes.create($scope.newRecipe).then(function(err){

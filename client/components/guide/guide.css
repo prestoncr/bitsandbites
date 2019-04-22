@@ -77,6 +77,11 @@ p3
   display:flex;
   overflow:scroll;
 }
+#centerme
+{
+  justify-content: center;
+  display:flex;
+}
 .jumbotron-ing
 { 
    margin-top: -10px;
