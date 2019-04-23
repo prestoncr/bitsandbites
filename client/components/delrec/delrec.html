@@ -62,7 +62,7 @@
   <div class="selectrec">
     <table class="table table-hover">
         <th>Recipes</th>
-        <tr ng-repeat="chosendata in chosendata | filter: query" ng-click="viewRec($index, recipe._id)">
+        <tr ng-repeat="chosendata in chosendata | filter: query" ng-click="viewRec($index, chosendata._id)">
             <td align= "left">{{chosendata.name}}</td>            
       </tr>
     </table>
